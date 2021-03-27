@@ -4,11 +4,11 @@
 </p>
 
 ## 📚 Sessions
-#### 1. 3/18 - [Session 0](https://github.com/NEXT-LIKELION/NEXTx9th/tree/master/Session0) Git, Github, README 기초 배우기 
-#### 2. 3/22 - HTML/CSS Basic
-#### 3. 3/25 - CSS Advanced
-#### 4. 3/29 - Python Basic
-#### 5. 4/1 - Crawling
+1. 3/18 - [Session 0](https://github.com/NEXT-LIKELION/NEXTx9th/tree/master/Session0) Git, Github, README 기초 배우기 
+2. 3/22 - HTML/CSS Basic
+3. 3/25 - CSS Advanced
+4. 3/29 - Python Basic
+5. 4/1 - Crawling
 
 ## 📑 Assignment
 > [과제 제출 페이지](https://github.com/NEXT-LIKELION/NEXTx9th/issues)
