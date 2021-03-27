@@ -1,7 +1,7 @@
 # NEXTxLIKELION at Korea University 9th
-<div style="text-align:center">
+<p align="center">
 <img width="300px" src="https://raw.githubusercontent.com/NEXT-LIKELION/NEXTx9th/master/img/logo.png">
-</div>
+</p>
 
 ## 📚 Sessions
 #### 1. 3/18 - [Session 0](https://github.com/NEXT-LIKELION/NEXTx9th/tree/master/Session0) Git, Github, README 기초 배우기 
