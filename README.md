@@ -9,6 +9,7 @@
 3. 3/25 - CSS Advanced
 4. 3/29 - Python Basic
 5. 4/1 - Crawling
+6. 4/5 - Django Basic
 
 ## 📑 Assignment
 > [과제 제출 페이지](https://github.com/NEXT-LIKELION/NEXTx9th/issues)
