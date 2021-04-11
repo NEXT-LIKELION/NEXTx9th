@@ -10,7 +10,7 @@
 4. 3/29 - Python Basic
 5. 4/1 - Crawling
 6. 4/5 - Django Basic
-
+7. 4/8 - DB & django CR
 ## 📑 Assignment
 > [과제 제출 페이지](https://github.com/NEXT-LIKELION/NEXTx9th/issues)
 1. [Issue](https://github.com/NEXT-LIKELION/NEXTx9th/issues) 탭을 통해 해당 세션 페이지 클릭하기
