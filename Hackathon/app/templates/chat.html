@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="7">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'chat.css' %}">
+    <title>Chatroom</title>
+</head>
+<body>
+    <div class="entire">
+        <div class="crimson">
+            <div class="nav-bar">
+                <p class="logo"><strong>KU</strong>GETHER</p>
+                <div class="register">
+                    <p>마이페이지</p>
+                    <p>로그아웃</p>
+                </div>
+            </div>
+            <div class="title">
+                <div class="left_line"></div>
+                <p>{{ the_lecture.subject_name }}</p>
+                <div class="right_line"></div>
+            </div>
+        </div>
+        
+        <div class="phone">
+            <div class="chat_list">
+                {% for chat in chats %}
+                    {% if chat.author.pk == user.pk %}
+                        <div class="upper_my_box">
+                                <li class="my_time">{{ chat.time }}</li>
+                            <div class="my_box">
+                                <li class="my_list">{{ chat.content }}</li>
+                            </div>
+                        </div>
+                    {% else %}
+                    <div class="nickname_box">
+                        <li class="nickname">{{ chat.author }}</li></div>
+                        <div class="upper_your_box">
+                            <div class="your_box">
+                                <li class="your_list">{{ chat.content }}</li>
+                            </div>
+                            <div class="your_time_box">
+                                <li class="your_time">{{ chat.time }}</li>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="under">
+            <form method="POST" class="chat">
+                {% csrf_token %}
+                <input type="text" name="content">
+                <button type="submit" id="arrow"><span class="material-icons-outlined">
+                    send
+                    </span></button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.scrollTo(0,document.body.scrollHeight);
+</script>
+
+</html>

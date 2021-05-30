@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block static %} {% load static %}
+<link href="{% static 'home.css' %}" rel="stylesheet">
+<script src="{% static 'home.js' %}"></script>
+<style>
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .blinking {
+    animation: blink 1.5s ease-in-out infinite alternate;
+  }
+  </style>
+{% endblock static %}
+
+{% block content %}
+<p class="slogan">독강도 더이상 두렵지 않게 KU Gather Together</p>
+<p class="title">KUGETHER</p>
+<a class="blinking" href="{% url 'login' %}">Tap Here</a>
+<div class="background"></div>
+{% endblock content %}

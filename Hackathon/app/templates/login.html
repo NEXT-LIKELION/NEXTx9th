@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+{% block static %} {% load static %}
+<link href="{% static 'login.css' %}" rel="stylesheet">
+<script src="{% static 'login.js' %}"></script>
+<style>
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}
+  
+.login-form {
+  animation:fadeIn 1s ease-in-out;
+}
+</style>
+{% endblock static %}
+
+{% block content %}
+<div class="title-div">
+  <div class="title">KUGETHER</div>
+</div>
+<div class="login-form">
+  <form method="POST" onsubmit="loginSubmit(this); return false;">
+    {% csrf_token %}
+    <div>
+      <input class="id-input" type="text" name="id" placeholder="ID">
+    </div>
+    <div>
+      <input class="password-input" type="password" name="password" placeholder="Password">
+    </div>
+    <div id="wrong">
+      아이디 혹은 비밀번호가 올바르지 않습니다.
+    </div>
+    <div class="login-button">
+      <a href="#">
+       <button id="login-button-sub">LOGIN</button>
+      </a>
+   </div>
+  </form>
+  <div>
+    <a class="join-us" href="{% url 'signup' %}">JOIN US</a>
+  </div>
+</div>
+{% endblock content %}

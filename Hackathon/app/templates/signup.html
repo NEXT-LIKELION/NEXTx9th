@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block static %} {% load static %}
+<link href="{% static 'signup.css' %}" rel="stylesheet">
+<script src="{% static 'signup.js' %}"></script>
+<style>
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}
+  
+.whole-form {
+  animation:fadeIn 1s ease-in-out;
+}
+</style>
+{% endblock static %}
+
+{% block content %}
+<div class="title-div">
+  <div class="title1">Create your<div class="title-blank">11111111111</div></div> 
+  <div class="title2">Account<div class="title-blank">11111111111111</div></div>
+  <!-- <div class="title-korean">회원가입 폼입니다.<div class="title-blank">111111111111111111111111111111111111111</div></div> -->
+</div>
+<form method="POST" id="signup-form" onsubmit="return false;">
+  <!-- onsubmit="return false;" 엔터, 버튼 클릭해도 제출 안 되도록 -->
+  {% csrf_token %}
+  <div class="whole-form">
+    <div class="signup-form">
+      <div class="form-items">
+        <div><span class="small-title"></span></div>
+        <input type="text" name="username" placeholder="이름">
+      </div>
+      <div class="form-items">
+        <div><span class="small-title"></span></div>
+        <input type="text" name="id" placeholder="아이디"><br>
+        <span id="same_id">이미 존재하는 아이디입니다.</span>
+      </div>
+      <div class="form-items">
+        <div><span class="small-title"></span></div>
+        <input type="password" name="password" placeholder="비밀번호">
+      </div>
+      <div class="form-items">
+        <div><span class="small-title"></span></div>
+        <input type="password" name="password_confirm" placeholder="비밀번호 확인"><br>
+        <span id="not_same_password">비밀번호가 일치하지 않습니다.</span>
+      </div>
+      <div class="form-items">
+        <div><span class="small-title"></span></div>
+        <input type="text" name="nickname" placeholder="닉네임"><br>
+        <span id="same_nickname">이미 존재하는 닉네임입니다.</span>
+      </div>
+      <div class="form-items">
+        <div><span class="small-title"></span></div>
+        <div class="email-combine">
+          <input class="email-input" type="text" name="email" placeholder="이메일"><div class="email-korea">@korea.ac.kr</div>
+        </div>  
+          <span id="same_email">이미 존재하는 이메일입니다.</span> 
+      </div>
+      <div class="button-space">
+        <button class="codesend-button" name="opt_button" type="button" onclick="getOTP(this); /*event.preventDefault();*/">인증번호 받기</button>
+        <!-- 온클릭 후에 실행될 폼의 온서브 및 이벤트 무력화 -->
+      </div>
+      <div class="opt-div">
+        <div><span class="small-title"></span></div>
+        <input type="text" name="opt" placeholder="인증번호">
+        <div id="not_same_opt">인증번호가 일치하지 않습니다.</div >
+      </div>
+    </div>
+  </form>
+
+
+  <div class="signup-button-div">
+    <a href="#">
+    <button class="signup-button" type="button" id="signup-button"
+      onclick="signupSubmit(this)">Sign Up!</button>
+    </a>
+  </div>
+</div>
+{% endblock content %}

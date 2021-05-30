@@ -1,0 +1,151 @@
+*{
+  margin: 0px;
+  background-color: rgb(245, 245, 245);
+   
+}
+/* 
+.title-div{
+  margin: 0px;
+  background: #a73737;  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #7a2828, #a73737);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to left, #662020, #a73737); 
+  height: 18vh;
+  padding-left: 4.3vw;
+  padding-top: 10vh;
+} */ 
+
+.title-div{
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  color: rgb(138, 45, 54);
+  font-size: 11vmin;
+  margin-top: 150px;
+}
+
+/* .title2{
+  color: rgb(252, 240, 240);
+  font-size: 1.5em;
+  text-shadow: 3px 2px 2px #681616;
+  
+}
+
+.title-detail{
+  margin-top: 3.5px;
+  color: rgb(71, 6, 6);
+  font-weight: 500;
+} */
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+input{
+  width: 230px;
+  height: 8vh;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  border-width: 0.7px;
+  font-size: 4vmin;
+}
+
+#login-button-sub{
+  width: 152px;
+  height: 7vh;
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(138, 45, 54);
+  color: white;
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+.password-input{
+  margin-top: 7px;
+}
+
+.join-us{
+  color: rgb(145, 48, 48);
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button{
+  margin-bottom: 11px;
+}
+
+.password-input{
+  margin-bottom: 5px;
+}
+
+::placeholder {
+  color: rgb(196, 194, 194);
+  font-weight: 400;
+  opacity: 1; /* Firefox */
+}
+
+
+
+.login-form > div.on{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#wrong{
+  display: none;
+  color: rgb(233, 25, 25);
+  margin-top: 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body{
+  animation: fadein 2000ms ease-out;
+  -moz-animation: fadein 2000ms ease-out; /* Firefox */
+
+}
+@keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+button{
+  cursor: pointer;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,900);
+
+.login-button a{
+  text-transform: uppercase;
+  font-size: 36px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  border: none;
+}
+
+.login-button a:hover {
+  -webkit-transform: scale(1.05);
+     -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+       -o-transform: scale(1.05);
+          transform: scale(1.05);  
+}
+

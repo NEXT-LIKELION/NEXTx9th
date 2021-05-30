@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block static %} {% load static %}
+<link href="{% static 'signup_done.css' %}" rel="stylesheet">
+<script src="{% static 'signup_done.js' %}"></script>
+<style>
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .blinking {
+    animation: blink 1.0s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}
+  
+.completed {
+  animation:fadeIn 0.8s ease-in-out;
+}
+</style>
+  
+{% endblock static %}
+
+{% block content %}
+<div class="title-div">
+  <div class="title1">Sign Up<div class="title-blank">11111111111111</div></div>
+  <div class="title1">Completed!<div class="title-blank">11111111111</div></div>
+</div>
+<div class="completed">
+  <div class="check-icon">
+    <span class="material-icons-outlined">done</span>    
+  </div>
+  <br>
+  <div class="complete-ment">
+    회원가입이 완료되었습니다!<br>
+    로그인 페이지로 이동하세요.
+  </div>
+  <br>
+  <div class="goto-login">
+    <a href="#">
+      <a class="blinking" href="{% url 'login' %}">Let's Start!</a>
+    </a>
+  </div>
+</div>
+{% endblock content %}

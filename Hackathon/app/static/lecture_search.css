@@ -1,0 +1,140 @@
+.lecture_name {
+    color: rgb(138, 45, 54);
+}
+
+.lecture_name > h1 {
+    margin-left: 30px;
+}
+
+.search {
+    height: 7vh;
+    width: 80%;
+    border: 2px solid rgb(138, 45, 54);
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.search_bottom > label {
+    color: white;
+    font-size: 0px;
+}
+
+.search_bottom > input {
+    border: none;
+    height: 6vh;
+    width: 80%;
+}
+
+.second_search > input {
+    border: none;
+    background-color: white;
+    color:rgb(138, 45, 54);
+    font-size: 13px;
+}
+
+.all_list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.all {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ECDBDB;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.all > h2 {
+    font-size: 13px;
+    width: 60%;
+}
+
+.all > h2 > a {
+    text-decoration: none;
+    color: black;
+}
+
+.all > p {
+    font-size: 7px;
+    width: 20%;
+}
+
+
+
+
+
+
+body{
+    margin: 0px;
+}
+
+.entire {
+    width: 100%;
+    height: 100%;
+}
+
+
+.crimson {
+    height: 20vh;
+    z-index: 1;
+    /* position: fixed; */
+}
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    color: black;
+    font-size: 12px;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+}
+
+.register > p {
+    margin-left: 2vh;
+
+}
+
+
+.register > p > a {
+    text-decoration: none;
+    color: #5F5757;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    color: #97323E;
+    font-weight: bold;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}

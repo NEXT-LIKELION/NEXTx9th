@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
+  <title>Detail</title>
+</head>
+<body>
+
+  <div class="entire">
+    <div class="crimson">
+        <div class="nav-bar">
+            <p class="logo"><strong>KU</strong>GETHER</p>
+            {% if user.is_authenticated %}
+            <div class="register">
+                <p><a href="{% url 'mypage' %}">마이페이지</a></p>
+                <p><a href="{% url 'logout' %}">로그아웃</a></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="title">
+      <h1>실시간 채팅방</h1><a href="{% url 'search' %}"><span class="material-icons-outlined" id="plus">
+        add
+        </span>
+      </a>
+    </div>
+    <!-- <div class="nav-bar">
+      <p class="logo"><strong>KU</strong>GETHER</p>
+      <div class="register">
+          <p>마이페이지</p>
+          <p>로그아웃</p>
+      </div> -->
+    <div class="boxes">
+      {% for lecture in lectures %}
+      <div class="li-div">
+      <li>
+        <div class="lecture-and-go">
+            <span class="lecture-name">{{lecture.subject_name}}</span>
+            
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+
+            
+            <a class="lectures" href="{% url 'chat' lecture.pk %}"><span class="material-icons-outlined">trending_flat</span><a>    
+        </div>
+      </li>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+  /* background: #a73737; */
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #7a2828, #a73737);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #662020, #a73737); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* font-size: 3vmin; */
+  padding-top: 30vh;
+  background-color: rgb(138, 45, 54);
+}
+
+
+
+/* .background {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed; /*어디서든 0.0포지션부터 위치하게됨*/
+  /* background: linear-gradient(to bottom, #662020, #a73737); */
+  /* z-index: -1; */
+/* } */
+
+*{
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+}
+
+p{
+  color: white;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a {
+  color:rgb(255, 255, 255, 0.5);
+  font-weight: lighter;
+  font-size: 4vmin;
+  margin-top: 50px;
+}
+
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title{
+  font-size: 12vmin;
+  text-shadow: 3px 3px 3px #6b1722;
+  margin-top: 0px;
+}
+
+.slogan{
+  font-size: 2.5vmin;
+  margin-bottom: 0px;
+}
+
+/* .wrap{
+  width: 100%;
+  position: fixed;
+  z-index: 99999;
+}
+
+.wrap.on{
+  transform: scale(10);
+  visibility: hidden;
+}  */
+
+body{
+  animation: fadein 2000ms ease-out;
+  -moz-animation: fadein 2000ms ease-out; /* Firefox */
+  -webkit-animation: fadein 2000ms ease-out; /* Safari and  Chrome */
+  -o-animation: fadein 2000ms ease-out; /* Opera */
+}
+@keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+.blinking{
+  margin-top: 100px;
+}
+
+
+

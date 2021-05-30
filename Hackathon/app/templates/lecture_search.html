@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'lecture_search.css' %}" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="entire">
+        <div class="crimson">
+            <div class="nav-bar">
+                <p class="logo"><strong>KU</strong>GETHER</p>
+                {% if user.is_authenticated %}
+                <div class="register">
+                    <p><a href="{% url 'mypage' %}">마이페이지</a></p>
+                    <p><a href="{% url 'logout' %}">로그아웃</a></p>
+                </div>
+                {% endif %}
+            </div>
+            <div class="lecture_name">
+                <h1>과목명 검색</h1>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="search_top">
+        <div class="search">
+            <form action="." method="post" class="search_bottom"> {% csrf_token %}
+            {{ form.as_table }} <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
+        <div class="second_search">
+            <input type="submit" value="검색" class="btn btn-primary btn-sm">
+        </div>
+        </form>
+    </div>
+    </div>
+    
+    <br/><br/>
+    <div class="all_list">
+        {% if object_list %}
+        {% for lecturedata in object_list %}
+        <div class="all">
+            <h2><a href="{% url 'add_lecture' lecturedata.pk %}">{{ lecturedata.subject_name }}</a></h2>
+            {{ lecturedata.modify_date|date:"N d, Y" }}
+            <p>{{ lecturedata.prof }}</p>
+            <p>{{ lecturedata.subject_id }}</p>
+        </div>
+        {% endfor %}
+    {% elif search_term %}<!-- 검색란이 공란인지 확인-->
+        <b><i>Search Word({{ search_term }}) Not Found</i></b>
+    {% endif %}
+    </div>
+    
+</body>
+</html>
