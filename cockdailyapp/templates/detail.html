@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+    <title>Cockdaily-Detail</title>
+</head>
+<div class="main">
+    <div class="nav-bar"><a href="{% url 'home' %}">Cockdaily</a></div>
+</div>
+<div class="container">
+    <div class="top">
+        <div class="left">
+            <div class="titlebar">
+                <div class="titlebar1"><p>Daily Cocktail Only You</p></div>
+                <div class="titlebar2">{{cocktail.title}}</div>
+                <div class="titlebar3">{{cocktail.old}}</div>
+            </div>
+            <div class="character">
+                <div class="char_tit">
+                    <span>Taste</span>
+                    <span>Alc lev.</span>
+                    <span>Sugar lev.</span>
+                </div>
+                <div class="level">
+                    <div class="taste">{{cocktail.taste}}</div>
+                    <div class="alcohollevel">
+                        {% if cocktail.alcohollevel == 1 %}
+                        <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTkz/MDAxNjIyMjMyMjkwMzYx.joZWYr9BlQfXNgt_DYY1M73iLqq4_D_54sULgmT_Jrcg.bdzLLFeM1nh7esp5us7G2KhnPHmSBawzQ3BgtJRMGQcg.PNG.bunnyready/detail_d1.png?type=w773" alt="">
+                        {% elif cocktail.alcohollevel == 2 %}
+                        <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjcx/MDAxNjIyMjMyMjkwMzY0.dtMORpLaJ_-HuSKDztcQkE15OUUAWVmZaAm3MxsB9Jsg.DfXSGSrTO-SAtb9DyzzD2mgFCRzw1CwfDkKpT-hnntgg.PNG.bunnyready/detail_d2.png?type=w773" alt="">
+                        {% else %}
+                        <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTYz/MDAxNjIyMjMyMjkwMzY0.FrDtStLkODQIkBNQ2e9is_EPvdjIg7c4bfn63-iZDzog.pcAxb8QtRsW4NUkN6Q09V8UCGOnu29EoJFEDbdTYFhkg.PNG.bunnyready/detail_d3.png?type=w773" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="sweetlevel">
+                        {% if cocktail.sweetlevel == 1 %}
+                        <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTkz/MDAxNjIyMjMyMjkwMzYx.joZWYr9BlQfXNgt_DYY1M73iLqq4_D_54sULgmT_Jrcg.bdzLLFeM1nh7esp5us7G2KhnPHmSBawzQ3BgtJRMGQcg.PNG.bunnyready/detail_d1.png?type=w773" alt="">
+                        {% elif cocktail.sweetlevel == 2 %}
+                        <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjcx/MDAxNjIyMjMyMjkwMzY0.dtMORpLaJ_-HuSKDztcQkE15OUUAWVmZaAm3MxsB9Jsg.DfXSGSrTO-SAtb9DyzzD2mgFCRzw1CwfDkKpT-hnntgg.PNG.bunnyready/detail_d2.png?type=w773" alt="">
+                        {% else %}
+                        <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTYz/MDAxNjIyMjMyMjkwMzY0.FrDtStLkODQIkBNQ2e9is_EPvdjIg7c4bfn63-iZDzog.pcAxb8QtRsW4NUkN6Q09V8UCGOnu29EoJFEDbdTYFhkg.PNG.bunnyready/detail_d3.png?type=w773" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="../media/{{cocktail.image}}" width="">
+        </div>
+    </div>
+    <div class="bottom">
+        {{cocktail.info}}
+    </div>
+</div>
+<div class="footer">
+    <div class="bgat">
+        <span>Bar Good at This</span>
+    </div>
+    <div class="box_wrapper">
+        {% for place in places %}
+        <li class="box">
+            <div class="place_desc">
+                <div class="location">
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTU1/MDAxNjIyMjMyMjkwNzI3._ryzKsUszHJDZ32IpZ2RXRur8JLiZtASq1grE6rU73Mg.ZnIGFjzmDrFhtlcSOHgr8BxYahnmwLbXElNUVF5s_VYg.PNG.bunnyready/detail_location.png?type=w773" alt="">
+                    <span>{{place.address}}</span>
+                </div>
+                <div class="placetitle">{{place.placetitle}}</div>
+                <div class="placerate">
+                {% if place.rate == 3 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjMz/MDAxNjIyMjMyMjkwNzQ2.qBhLU2w88cDNxcjt1gma-zMynCwGHcWF6AhFJDIDr4Yg.ClAc7enhXyUU4hQBdIXKXxLwbODLsWUcwXDbE1jmRWEg.PNG.bunnyready/detail_star3.png?type=w773" alt="">   
+                {% elif place.rate == 4 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTgy/MDAxNjIyMjMyMjkwNzgz.r1LLhxFVs9Q9K42vIiymcDWPe4igDXZgRa4k8hhwdYcg.EUO8q1ix0CriubS4DlIG4roX5xvqivHv-EKovgZ6eCog.PNG.bunnyready/detail_star4.png?type=w773" alt="">
+                {% elif place.rate == 5 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjk2/MDAxNjIyMjMyMjkwNzYw.439HtPXQlqFFQxp0U0kirZmVNneA3BFx3LJqrZgubZQg.RLbDDu_HzDgkTXbcLrNvWYkeQi4n3vHcmSr57D1c4Hkg.PNG.bunnyready/detail_star5.png?type=w773" alt="">
+                {% endif %}
+                </div>
+            </div>
+            <a href="{{place.info}}">
+                <div class="placeimg">
+                    <img src="{{place.image}}" alt="">
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </div>
+</div>
+<script>
+            const slider = document.querySelector('.box_wrapper');
+            let isMouseDown = false;
+            let startX, scrollLeft;
+          
+            slider.addEventListener('mousedown', (e) => {
+              isMouseDown = true;
+              slider.classList.add('active');
+          
+              startX = e.pageX - slider.offsetLeft;
+              scrollLeft = slider.scrollLeft;
+            });
+            
+            slider.addEventListener('mouseleave', () => {
+              isMouseDown = false;
+              slider.classList.remove('active');
+            });
+            
+            slider.addEventListener('mouseup', () => {
+              isMouseDown = false;
+              slider.classList.remove('active');
+            });
+          
+            slider.addEventListener('mousemove', (e) => {
+              if (!isMouseDown) return;
+          
+              e.preventDefault();
+              const x = e.pageX - slider.offsetLeft;
+              const walk = (x - startX) * 1;
+              slider.scrollLeft = scrollLeft - walk;
+            });
+</script>
+</body>
+</html>

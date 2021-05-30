@@ -1,0 +1,168 @@
+html {
+    scroll-behavior: smooth;
+    background-color: #fff8ee;
+    height:100%;
+    width:100%;
+}
+body{
+    height:100%;
+    width:100%;
+    margin:0px;
+    overflow: hidden;
+}
+
+.q{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
+    padding-top:50px;
+}
+
+button{
+    height: 70px;
+    width : 100px;
+    border:none;
+    border-radius: 35px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    background-color: white;
+    font-size:24px;
+    font-weight: bold;
+}
+
+.label{
+    width:50%;
+    min-width: 800px;
+    display:flex;
+    justify-content:space-between;
+    margin: 50px 0px 30px 0px;
+}
+
+.q div{
+    /* margin: 30px 0px; */
+    text-align: center;
+}
+
+body{
+    font-family: 'NanumSquare', sans-serif !important;
+    color:#707070;
+}
+body button{
+    font-family: 'NanumSquare', sans-serif !important;
+    color:#707070;
+    margin: 10px 0px;
+}
+
+label img{    
+   padding-top: 10px;  
+}
+
+.bar{
+    margin:10px 0px 20px 0;
+}
+
+div p{
+    font-size:20px;
+}
+.bar img{
+   height:20px;
+   width: 600px;
+ }
+
+#main{
+     position:fixed;
+     padding: 20px;
+}
+#header{
+    height:20%;
+    width:100%;
+    position:fixed;
+    background: linear-gradient(#fff8ee, #fff8ee 50%, transparent);
+}
+
+a {
+    text-decoration: none;
+    font-size:35px;
+    font-weight: bold;
+}
+
+a:link{
+    color:#707070;
+}
+
+a:visited{
+    color: #707070;
+}
+
+.alert{
+    height: 20px;
+    width: 100%;
+    padding-bottom:10px;
+}
+/* 
+input[type="radio"]:checked{
+    display: none;
+} */
+#result p{
+    letter-spacing: 1px;
+    font-size: 23px;
+}
+
+
+.q {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    /* Firefox */
+    -webkit-animation: fadein 2s;
+    /* Safari and Chrome */
+    -o-animation: fadein 2s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

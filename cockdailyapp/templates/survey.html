@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'survey.css' %}">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+</head>
+<body>
+    <div id="header">
+        <div id="main"><a href="../">Cockdaily</a></div>
+    </div>
+    <div id="mail" class= "q">
+        <div>
+            <p>Q1. 오늘 아침, 바쁜 걸음으로 우편함 앞을 지나다 편지 한 통을 발견한 당신!
+                <br>누구에게 온 편지인가요? </p>
+        </div>
+        <div  class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfNjgg/MDAxNjIyMjM0NTUxOTgz.EhqjAHR5jHBe6o1oNAGBqmMYyCkg8rMo5YLqIxQcxeYg.eaXO9VFGV-4OUB68RGtXtxWPejskj_EaDagM6pTsFUwg.PNG.bunnyready/survey_progress1.png?type=w773"/></div>
+        <div class='label'>
+            <label>
+                <input type='radio' name="mail" value="1" > 언제나 편안한 오랜 친구
+                <div>
+                    <img src='https://postfiles.pstatic.net/MjAyMTA1MjlfOTQg/MDAxNjIyMjM0NTUxNDA2.3y7n3WL3MnrwE7b5HJ1SoTbg9LlDWpfLk8YYUHbkUpAg.qhjbEuiRmYVtwxhNH2iEbVN7eZGNaT45QhhG8NuJza0g.PNG.bunnyready/survey_1_1.png?type=w773'/>
+                </div>
+            </label>
+            <label>
+                <input type='radio' name="mail" value="2"> 사랑하는 연인
+                <div>
+                    <img src='https://postfiles.pstatic.net/MjAyMTA1MjlfMjgw/MDAxNjIyMjM0NTUxNDA2.2mA4vQVfqanXplHqrMwUK_vIaXQiNwgDaeBN4x0xZ_cg.5jAPVMqjcGFZz7DD4JMCCuZsa2y7LhkiLbBkzMh0LH8g.PNG.bunnyready/survey_1_2.png?type=w773'/>
+                </div>
+            </label>
+            <label>
+                <input type='radio' name="mail" value="3"> 모르는 누군가
+                <div>
+                    <img src='https://postfiles.pstatic.net/MjAyMTA1MjlfMTg1/MDAxNjIyMjM0NTUxNDAx.wybDEdaPPDACBi7qO6hi679IfI5A7LC8l2O_gpr4CaIg.zWtREll1GnCCqP-0BOaUJzAlzyRRW_4nTOZlZMktQGYg.PNG.bunnyready/survey_1_3.png?type=w773'/>
+                </div>
+            </label>
+        </div>
+        <div id="alert0" class="alert"></div>
+        <div>
+            <button onclick="check(0)">GO</button>
+        </div>
+    </div>
+
+    <div id="taste" class= "q">
+        <div>
+            <p>Q2. 바쁜 아침에 실려 걸어가던 당신, 당신을 스친 매력적인 향기에 잠시 멈춰섭니다.
+                어떤 향기인가요?</p>
+        </div>
+        <div class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjE4/MDAxNjIyMjM0NTUxOTg3.zbIPJpUQCLYq_wqIr5LT7FqkOjCNsWr3ZyHdIkZvvNMg.WO7b9XHtqviiSeUiaBm2FnVZm-JlIn4l6zmLfdbu7Rwg.PNG.bunnyready/survey_progress2.png?type=w773"/></div>
+                <div class='label'>
+            <label>
+                <input type='radio' name="taste" value="1" > 달콤한 과일향
+                <div><img src='https://postfiles.pstatic.net/MjAyMTA1MjlfMTg3/MDAxNjIyMjM0NTUxNDEy.hSUyYh5Ctg2LvE-srUBZnosyomgFWKW9TbHvJY4sAG8g.Bpy9FtNTVksR70dZ2LVwY0ovma4s40w2Fms9x5YfYC8g.PNG.bunnyready/survey_2_1.png?type=w773'/></div>
+            </label>
+            <label>
+                <input type='radio' name="taste" value="2"> 향그러운 꽃향기
+                <div><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjI4/MDAxNjIyMjM0NTUxNTMz.aestm9MNz-50nSWpAjECZJpcN5SeD0G9lgWaAfJ9ox0g.4snLh7vbivpbXRfuKYLaHMLv6v_Sx5W06L2QLHABOWgg.PNG.bunnyready/survey_2_2.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="taste" value="3"> 숲을 닮은 우디 향
+                <div><img src='https://postfiles.pstatic.net/MjAyMTA1MjlfNjQg/MDAxNjIyMjM0NTUxNTM0.38ajJervM-9knU_f_x7vh9ib659BTWB40Vuh7zlhSTQg.9rhqqzsV22QWJfO2DCxmkZsG1q47BbC9hYaFf9dJPHYg.PNG.bunnyready/survey_2_3.png?type=w773'/></div>     
+            </label>
+        </div>
+        <div id="alert1" class="alert"></div>
+        <div>
+            <button onclick="taste(); check(1)">GO</button>
+        </div>
+    </div>
+
+    <div id="sweet" class= "q">
+        <div>
+            <p>Q3. 오후의 햇살과 식곤증으로 나른해진 당신을 깨워 줄 한 잔의 음료는 무엇인가요?</p>
+        </div>
+        <div class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfODMg/MDAxNjIyMjM0NTUyMDAx.7s6MbMdZZjfRXqudNqe30_XJf75Ul1SdcTNifoPi3Bkg.Rzz2I9_pw2WWAoLsZb1MW-TtlH1Xj5abTbpJc-_jIjcg.PNG.bunnyready/survey_progress3.png?type=w773"/></div>
+        <div class='label'>
+            <label>
+                <input type='radio' name="sweet" value="1" > 시원한 물 한 잔
+                <div><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMzMg/MDAxNjIyMjM0NTUxNTQz.vIa6t39m0HTwiMkEwREOphp_xVJr15JqF5J1Pe9_xSkg.EJzIUMaeb-5T7BxLxkMGUHrx-u1WL1qDTUj9x8oS4q0g.PNG.bunnyready/survey_3_1.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="sweet" value="2"> 향그러운 부드러움, 라떼
+                <div><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTMx/MDAxNjIyMjM0NTUxNTQ2.6SlgBjSNoKCAAlhRgNTPWOrjtm0BpB2tX2PywAJ-pJ8g.yHjktiCcSSX30QVRzaAFBe3jgvkxPfkl8wxLEC5jXAwg.PNG.bunnyready/survey_3_2.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="sweet" value="3"> 살얼음 살짝, 달콤한 생과일주스
+                <div><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjkg/MDAxNjIyMjM0NTUxNTYz.VBH0v4GbWvBLb92FUI25RyqU8_xMjhsw71KnhQCbWtIg.8_UYkx31-KXX9x8Megs2z66hOLd0Jn13Xp7P7UGtMjEg.PNG.bunnyready/survey_3_3.png?type=w773"/></div>
+            </label>
+        </div>
+        <div id="alert2" class="alert"></div>
+        <div>
+            <button onclick="sweet(); check(2)">GO</button>
+        </div>
+    </div>
+
+    <div id="music" class= "q">
+        <div>
+            <p>Q4. 한 잔의 여유를 위해 근처 카페를 찾은 당신, 
+            <br>흘러나오는 음악이 귀를 촉촉이 적십니다.  어떤 음악인가요?</p>
+        </div>
+        <div class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTE2/MDAxNjIyMjM0NTUyMDA0.FSSA2XwpNKgMlsVwL7qTegGhAurO5IwukVIVXEAulcAg.8y8Qrj1vKHRKKQ4mgARO4CPgTVP8ZnVc8-gk__BTlD0g.PNG.bunnyready/survey_progress4.png?type=w773"/></div>
+        <div class='label'>
+            <label>
+                <input type='radio' name="music" value="1" > 희망 가득한 아이돌의 신곡
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTMx/MDAxNjIyMjM0NTUxNTk0.fNbYJPrl7FX_WKwM9YekX0C1DWne9xOzwqMMATt1bFAg.jw-gQ69G0ns0qMVXDNJ059Bi5PUczK_75XAVFdg_aHwg.PNG.bunnyready/survey_4_1.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="music" value="2"> 길거리 밴드의 마지막 앙코르
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTI1/MDAxNjIyMjM0NTUxNjUy.fj9iEVaU9VvCYfvlJZ5DP06HKQqguu-Qiqw-eBt7j98g.Ks2z5-3wbrx04gQTSZel25sVGTm8NCUeMYZ2a3X41Gsg.PNG.bunnyready/survey_4_2.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="music" value="3"> 마음까지 따듯해지는 차분한 클래식
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTYx/MDAxNjIyMjM0NTUxNjg0.tFa5x-i12dTCibwR2aN_VPf-cnb8e_d8vKBqighstAQg.ajpX988Tk489vDIPRxu6oB0hWhSIeRUrGttOclp1GFkg.PNG.bunnyready/survey_4_3.png?type=w773"/></div>
+            </label>
+        </div>
+        <div id="alert3" class="alert"></div>
+        <div>
+            <button onclick="check(3)">GO</button>
+        </div>
+    </div>
+
+    <div id="food" class= "q">
+        <div>
+            <p>Q5. 바쁜 하루를 마치고 오늘의 저녁을 고민해봅니다. 무얼 먹을까요?</p>
+        </div>
+        <div class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTcg/MDAxNjIyMjM0NTUyMDk2.Q6DlNiXi1LIgfplIbtDe9xsS3gj2TL-wubOnuLz58uMg.CNO_AThaLYmpcjRAy3M9w_S-dTJYr2t0UJ6T0bkRdq4g.PNG.bunnyready/survey_progress5.png?type=w773"/></div>
+        <div class='label'>
+            <label>
+                <input type='radio' name="food" value="1" > 집에 생각나는 정갈한 한식
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfNzEg/MDAxNjIyMjM0NTUxNjkw.GqyAra-dXgITApFk18lkekevAFRUfRn1YGiV0DoDAPUg.Ss8dDoyaBUhRGraB74G_ez1RIY5d4ftgA-3NEqyCB28g.PNG.bunnyready/survey_5_1.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="food" value="2"> 저기압일 땐 고기앞으로! 양식
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMyAg/MDAxNjIyMjM0NTUxNzI3.4L_u3_xfTQgO1VV1_IfmuNganaFa4m15i4PcEowTrlkg.9-HwK1A-6iDvY7ILf8mgq63CcDSvuppXVV0CyjPQRccg.PNG.bunnyready/survey_5_2.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="food" value="3"> 지난 축제 때 먹었던 멕시코 타코
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTA4/MDAxNjIyMjM0NTUxNzQx.g8MAfH5UhqHMnzb5472J22T_RUkYIct3TVM9nXhzlNUg.Kh6YDftVWym8g8JZ8xq3bnH0P4DZwJZOCQpRjhl2SiEg.PNG.bunnyready/survey_5_3.png?type=w773"/></div>
+            </label>
+        </div>
+        <div id="alert4" class="alert"></div>
+        <div>
+            <button onclick="check(4)">GO</button>
+        </div>
+    </div>
+
+    <div id="color" class= "q">
+        <div>
+            <p>Q6. 문득, 창 밖으로 눈길을 던진 당신. 
+                당신의 눈에 비친 하늘은 어떤 색깔인가요?</p>
+            <label>
+        </div>
+        <div class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfNzUg/MDAxNjIyMjM0NTUyMDg4.k22VHtokj6aLezWpeUKN_8_IQykHMj6DZXanh2r7UMQg.kX3VLa_t0hkf7ErnvF5jgJSs06FKMUkP0FffOp01wSMg.PNG.bunnyready/survey_progress6.png?type=w773"/></div>
+        <div class='label'>
+            <label>
+                <input type='radio' name="color" value="1" > 푸르른 맑음을 머금은 화창한 하늘
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTY5/MDAxNjIyMjM0NTUxNzc3.xnqm2YlwyFSIvWTdSL9-pXCca0uxDF3q6ZzQT0umFzMg.vkjC940FDCLgGMfcDr2gySr_xSz6YUsLNknTs-xvvRQg.PNG.bunnyready/survey_6_1.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="color" value="2"> 해질녘 지친 태양 곁에 머무는 주홍빛 하늘
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjky/MDAxNjIyMjM0NTUxODQw.4vgCj9FPm2oBfhKUfEJUO4askWe3drxgb_5zGp7asrYg.hddN9jiAM1tD0CbqG3QQ2C4-JnSGmjet-Dlo9g0rz3Qg.PNG.bunnyready/survey_6_2.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="color" value="3"> 별빛에 밝음을 양보한 검은 하늘
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfODgg/MDAxNjIyMjM0NTUxODQ4.ZboJ_GImpPrrIaHHwmTZ1M0BteZPiOH0LuXFMa6Druog.BtzgpbUC-MYOpz9ckLjmYKjCLe-nuxZ_BCrUKBCgMf8g.PNG.bunnyready/survey_6_3.png?type=w773"/></div>
+            </label>
+        </div>
+        <div id="alert5" class="alert"></div>
+        <div>
+            <button onclick="check(5)">GO</button>
+        </div>
+    </div>
+    <div id="alcohol" class= "q">
+        <div>
+            <p>Q7. 오늘 하루도 누구보다 멋졌던 당신!
+                당신의 내일은 어떤 모습인가요?</p>
+        </div>
+        <div class = "bar"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfOTQg/MDAxNjIyMjM0NTUxOTkx.igUpIp7gurNhj_X4uRrYcvM7YKzBodSfbHQvuPFhp24g.ctPJTd_3XS-aO1lkc_iXrcLiHppjth3Ezk6dexYXNxsg.PNG.bunnyready/survey_progress7.png?type=w773"/></div>
+        <div class='label'>
+            <label>
+                <input type='radio' name="alcohol" value="1" > 내일도 알차게, 누구보다 바쁜 하루
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjYz/MDAxNjIyMjM0NTUxNDAy.0ZCb7WXJJVs2juLx6xCb3y-vprzhE-wcYloHakVBvjgg.R4v_1P1BWGptOwHX9DDQAOt6oQSINTH4vgfnGaawOEog.PNG.bunnyready/survey__7_1.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="alcohol" value="2"> 일과 휴식을 같이! 워라밸 넘치는 하루
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTU0/MDAxNjIyMjM0NTUxMzkw.t5rB9SjQSFPfyaJjwNSDWCJETlKJAcgKh14vJc58KSEg.xvQovwaxLe8_yFzigee8xoNZMd6r4beC5lz2Clcpllsg.PNG.bunnyready/survey__7_2.png?type=w773"/></div>
+            </label>
+            <label>
+                <input type='radio' name="alcohol" value="3"> 나에게 주는 선물, 여유로운 하루
+                <div class="s_img"><img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjIx/MDAxNjIyMjM0NTUxODYx.CPTQpI5YHPOetzgRvMfHxQa86bL1n9K32YV8PC-_hhog.i9XuyvwXQdwnou3Jvp-kLyO1VexPoUsNk6jJoxXNsWUg.PNG.bunnyready/survey_7_3.png?type=w773"/></div>
+            </label>
+        </div>
+        <div id="alert6" class="alert"> </div>
+        <div>
+            <button onclick='alcohol(); starttimer()'>GO</button>
+        </div>
+    </div>
+    
+    
+    <div id='result' class='q'><img src="../media/spin-1.5s-200px.gif"><p>분석중입니다.    조금만 기다려주세요.</p></div>
+
+    <script>
+        window.onload=function(){
+            setTimeout(
+                function(){
+                    scrollTo(0,0);
+                }, 100);
+        }
+
+        var i=0;
+        var j=0;
+        var k=0;
+
+        const inputList = document.getElementsByTagName('input');
+        const nameList = [];
+        var b=0;
+        nameList[0]=inputList[0].name;
+        for(let a=1; a<inputList.length;a++){
+            if(nameList[b]!=inputList[a].name){
+                nameList[b+1]=inputList[a].name;
+                b++;
+            }
+        }
+
+        function check(a){
+            var c;
+            const valueList = document.getElementsByName(nameList[a]);
+            valueList.forEach((node)=>{
+                if(node.checked){
+                    c = node.value;
+                }
+            })
+            if(c==1|c==2|c==3){                
+                const loc="#"+nameList[a+1];
+                location.href=loc;
+            }
+            else{
+                const alertt="alert"+a;
+                document.getElementById(alertt).innerText=("체크해주세요");
+            }
+        }
+
+        function sweet(){
+        const sweetNodeList = document.getElementsByName('sweet');
+
+        sweetNodeList.forEach((node) => {
+            if(node.checked){
+                i = node.value;}
+            })
+        }
+        function alcohol(){
+            const alcoholNodeList = document.getElementsByName('alcohol');
+
+            alcoholNodeList.forEach((node) => {
+                if(node.checked){
+                    j = node.value;
+                }
+            })
+
+            if(j==1|j==2|j==3){             
+                location.href="#result";
+            }
+            else{
+                document.getElementById('alert6').innerText=("체크해주세요");
+            }
+        }
+        function taste(){
+            const tasteNodeList = document.getElementsByName('taste');
+
+            tasteNodeList.forEach((node) => {
+                if(node.checked){
+                    k = node.value;
+                }
+            })
+        }
+
+        function select(){
+            if(i==1){
+                if(j==1){
+                    if(k==1){
+                        location.href="../result/1"
+                    }
+                    else if(k==2){
+                        location.href="../result/2"
+                    }
+                    else if(k==3){
+                        location.href="../result/3"
+                    }
+                }
+                else if(j==2){
+                    if(k==1){
+                        location.href="../result/4"
+                    }
+                    else if(k==2){
+                        location.href="../result/5"
+                    }
+                    else if(k==3){
+                        location.href="../result/6"
+                    }
+                }
+                else if(j==3){
+                    if(k==1){
+                        location.href="../result/7"
+                    }
+                    else if(k==2){
+                        location.href="../result/8"
+                    }
+                    else if(k==3){
+                        location.href="../result/9"
+                    }
+                }
+            }
+            else if(i==2){
+                if(j==1){
+                    if(k==1){
+                        location.href="../result/10"
+                    }
+                    else if(k==2){
+                        location.href="../result/11"
+                    }
+                    else if(k==3){
+                        location.href="../result/12"
+                    }
+                }
+                else if(j==2){
+                    if(k==1){
+                        location.href="../result/1"
+                    }
+                    else if(k==2){
+                        location.href="../result/2"
+                    }
+                    else if(k==3){
+                        location.href="../result/3"
+                    }
+                }
+                else if(j==3){
+                    if(k==1){
+                        location.href="../result/4"
+                    }
+                    else if(k==2){
+                        location.href="../result/5"
+                    }
+                    else if(k==3){
+                        location.href="../result/6"
+                    }
+                }
+            }
+            else if(i==3){
+                if(j==1){
+                    if(k==1){
+                        location.href="../result/7"
+                    }
+                    else if(k==2){
+                        location.href="../result/8"
+                    }
+                    else if(k==3){
+                        location.href="../result/9"
+                    }
+                }
+                else if(j==2){
+                    if(k==1){
+                        location.href="../result/10"
+                    }
+                    else if(k==2){
+                        location.href="../result/11"
+                    }
+                    else if(k==3){
+                        location.href="../result/12"
+                    }
+                }
+                else if(j==3){
+                    if(k==1){
+                        location.href="../result/1"
+                    }
+                    else if(k==2){
+                        location.href="../result/2"
+                    }
+                    else if(k==3){
+                        location.href="../result/3"
+                    }
+                }
+            }
+        }
+
+        var timerID;
+        function starttimer(){
+            timerID= setTimeout("hello()",2500);
+        }
+        function hello(){
+            select();
+            //timerID=setTimeout("hello()",300);
+        }
+     
+    </script>
+</body>
+</html>

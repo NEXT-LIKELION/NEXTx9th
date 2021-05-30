@@ -1,0 +1,124 @@
+html{
+    background-color: #ff9e75;
+    height:100%;
+    width: 100%;
+}
+* {
+    margin:0;
+    width:100%;
+    box-sizing:border-box;
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+body {
+    height:100%;
+    width:100%;
+    margin:0px;
+    overflow: hidden;
+}
+.whole_wrapper {
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
+    padding-top:50px;
+
+}
+
+
+#headline {
+    font-size:75px;
+    font-weight:bold;
+    width:auto;
+    display:flex;
+    justify-content:center;
+    color:white;
+}
+
+#subtitle {
+    font-size:20px;
+    width:auto;
+    display:flex;
+    justify-content:center;
+    color:white;
+}
+
+button {
+    height: 40px;
+    width : 170px;
+    border:none;
+    border-radius: 35px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    background-color: white;
+    font-size:20px;
+    font-weight: bold;
+    color:#707070;
+
+}
+
+.buttons{
+    width:380px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding-top:40px;
+}
+
+
+body {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    /* Firefox */
+    -webkit-animation: fadein 2s;
+    /* Safari and Chrome */
+    -o-animation: fadein 2s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

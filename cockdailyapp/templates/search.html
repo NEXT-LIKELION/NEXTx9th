@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'search.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+    <style>
+        li{
+            display:none;
+        }
+    </style>
+    <title>Cockdaily-search</title>
+</head>
+<body>
+    <div class="whole_wrapper">
+        <div class="texts">
+            <div class="headline">
+                <a id="headline" href="../">Cockdaily</a>
+            </div>
+            <div class="subtitle">
+                <p id="subtitle">Daily Cocktail Only For You</p>
+            </div>
+        </div>
+    <div class="buttons">
+        <form class='search'>
+            <input class='keyword' type='text' name='cocktail_search' maxlength = 255 value="" autocomplete="off" placeholder="칵테일을 검색해주세요">
+            <button class = "search_btn" type = "submit" name="click" value=''><i class="fas">Search</i></button>
+        </form>
+    </div>
+    {% for Cocktail in cocktails %}
+    <div display='none'>
+        <li pk="{{Cocktail.pk}}">{{ Cocktail.title }}</li>
+    </div>
+    {% endfor %}
+    </div>
+
+    <script>
+        const cocktailList = document.querySelectorAll('li');
+        const cocktailTitle=[];
+        for(let a=0;a<cocktailList.length;a++){
+            cocktailTitle[a] = cocktailList[a].innerText;
+        }
+                
+        const Searching = Search.prototype;
+        
+        function Search(){
+            this.keyword = document.querySelector('input[name="cocktail_search"]');
+            this.button = document.querySelector('.search_btn');
+            this.form = document.querySelector('.search');
+
+            this.Engine();
+        }
+        Searching.Engine = function(){
+            this.form.addEventListener('submit', e => {
+                e.preventDefault();
+
+                let keyword = this.keyword.value;
+                console.log(keyword)
+                for(let a=0;a<cocktailTitle.length;a++){
+                    if(keyword==cocktailTitle[a]){
+                        let i=a+1;
+                      //document.getElementById('hello').innerText=i;
+                      location.href ='detail/'+i;
+                    }
+                }
+            })
+        }
+        new Search();
+    </script>
+</body>
+</html>

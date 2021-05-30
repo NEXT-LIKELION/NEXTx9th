@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}    
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="../static/result.css">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+
+    <title>Cockdaily-result</title>
+</head>
+<body>
+    <!-- <div id="header">
+        <div id="main"><a href='../'">Cockdaily</a></div>
+    </div> -->
+    <div class="all">
+        <p id="small">Daily Cocktail Only For You</p>
+        <p id="title">{{cocktail.title}}</p>
+        <p id="dis">{{cocktail.old}}</p>
+
+        <div class="character">
+            <div class="char_tit">
+                <span>Taste</span>
+                <span>Alc lev</span>
+                <span>Sugar lev</span>
+            </div>
+            <div class="level">
+                <div class="taste"><p>{{cocktail.taste}}</p></div>
+                <div class="alcohollevel">
+                    {% if cocktail.alcohollevel == 1 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTkz/MDAxNjIyMjMyMjkwMzYx.joZWYr9BlQfXNgt_DYY1M73iLqq4_D_54sULgmT_Jrcg.bdzLLFeM1nh7esp5us7G2KhnPHmSBawzQ3BgtJRMGQcg.PNG.bunnyready/detail_d1.png?type=w773" alt="">
+                    {% elif cocktail.alcohollevel == 2 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjcx/MDAxNjIyMjMyMjkwMzY0.dtMORpLaJ_-HuSKDztcQkE15OUUAWVmZaAm3MxsB9Jsg.DfXSGSrTO-SAtb9DyzzD2mgFCRzw1CwfDkKpT-hnntgg.PNG.bunnyready/detail_d2.png?type=w773" alt="">
+                    {% else %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTYz/MDAxNjIyMjMyMjkwMzY0.FrDtStLkODQIkBNQ2e9is_EPvdjIg7c4bfn63-iZDzog.pcAxb8QtRsW4NUkN6Q09V8UCGOnu29EoJFEDbdTYFhkg.PNG.bunnyready/detail_d3.png?type=w773" alt="">
+                    {% endif %}
+                </div>
+                <div class="sweetlevel">
+                    {% if cocktail.sweetlevel == 1 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTkz/MDAxNjIyMjMyMjkwMzYx.joZWYr9BlQfXNgt_DYY1M73iLqq4_D_54sULgmT_Jrcg.bdzLLFeM1nh7esp5us7G2KhnPHmSBawzQ3BgtJRMGQcg.PNG.bunnyready/detail_d1.png?type=w773" alt="">
+                    {% elif cocktail.sweetlevel == 2 %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjcx/MDAxNjIyMjMyMjkwMzY0.dtMORpLaJ_-HuSKDztcQkE15OUUAWVmZaAm3MxsB9Jsg.DfXSGSrTO-SAtb9DyzzD2mgFCRzw1CwfDkKpT-hnntgg.PNG.bunnyready/detail_d2.png?type=w773" alt="">
+                    {% else %}
+                    <img src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTYz/MDAxNjIyMjMyMjkwMzY0.FrDtStLkODQIkBNQ2e9is_EPvdjIg7c4bfn63-iZDzog.pcAxb8QtRsW4NUkN6Q09V8UCGOnu29EoJFEDbdTYFhkg.PNG.bunnyready/detail_d3.png?type=w773" alt="">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button onclick="location.href='../detail/{{cocktail.pk}}'">More Info</button>
+            <button onclick="location.href='../survey'">Test Again</button>
+        </div>
+
+        <div class="b">
+            <img class="b1"
+                src="https://postfiles.pstatic.net/MjAyMTA1MjlfMjEy/MDAxNjIyMjczMDc5NzQ1.CElsi2mHv_QPnke-NKBqu4nOfD2M4_SU3D9OGJtHDvog.tOd0vhizDqnNX5BzGSZjrXqredDL283JPi-ZIfaRMzog.PNG.bunnyready/result_b1.png?type=w773"
+                onclick="location.href='..'" />
+
+            <a href="javascript:sendLinkKakao()">
+                <img class="b2" href="javascript:sendLinkKakao()"
+                src="https://postfiles.pstatic.net/MjAyMTA1MjlfMSAg/MDAxNjIyMjMxNTg3NDU2.bqhzSktOhTZCDjVLufjzkCByiRCXJTaPTL6No7wijfsg.g6UFjiIPmb-gaEf961tC1G82PsJFZc63sYPiW7uFbxkg.PNG.bunnyready/result_b2.png?type=w773" />
+            <img class="b3" href="#" onclick="clip(); return false;"
+                src="https://postfiles.pstatic.net/MjAyMTA1MjlfMTUw/MDAxNjIyMjMxNTg3NDU2.zAdOJwZ1Z6-xqUZ5cHs20EKPxVEawk8QkvlCI-zv1Ycg.KsnpjV6sx9qsniaFTN5JxG6-DBI6-DDh5hY6ldzzc6Ig.PNG.bunnyready/result_b3.png?type=w773" />
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        const body = document.querySelector("body")
+
+        const urlList = [
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfNDEg/MDAxNjIyMjMxNTg3ODUw.JxqEk-DkqNErEKouR_odbGKCusksTI6J32FA5MrCmokg.BGPoOWCY1_qiRjmzeRL9KUdTvZiF6JTAPJFxv65-m-Ig.PNG.bunnyready/result_m5.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfNTEg/MDAxNjIyMjMxNTg3Njg3.Lckt7eI77DrOB096dvIVUZoDDdX34_vgC5c9OzHNniEg._NtcVYGThc9r5kjxVX4VOyo6mODRFEt8q1SgiaJ4GFQg.PNG.bunnyready/result_m1.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfOTEg/MDAxNjIyMjMxNTg4MDY1.iQi3Ulm8vhYsG9ka4W-HVqWMr1jqrJhjxqP9j5dCDa4g.NivB1RIJMxTsIJrhafUrgNdpAreeduvbkg10Z8PGPuEg.PNG.bunnyready/result_m2.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTE4/MDAxNjIyMjMxNTg3Nzg4.tH02EjeziHsTB2aKHWBfOkWehu1x6H75D2ov5TuRQScg.otUKsPxCjuhJypGtL8lz2fznD0ZZApxsFkKwCXYuqjkg.PNG.bunnyready/result_m3.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMzMg/MDAxNjIyMjMxNTg4MDkw.LBJijHoitudQTmrEWfE3Db_tTfRNATF3g16rIgz5G7wg.PG1NnSI5DzexWhsrj5XzF0rmzYiN7RMC5itbrSfXtq4g.PNG.bunnyready/result_m4.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTcw/MDAxNjIyMjMxNTg3ODYy.ysvzXzpJnYaL8RuS45Y5M1mL2nSDhmjEuPFJiFKjohsg.2d4Kxgu7qdYhsb1y5SG1wjg4FjVYxksBFj1QpOD5gvIg.PNG.bunnyready/result_m6.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjQ2/MDAxNjIyMjMxNTg3OTI4.OZbss8fr_i3SXyduXrNGOYss5YEAdefDcp1Gj2voYE0g.gaXtvsZgLYpAyO6nMv7NWduLdxK3pyael-t3N3I_SW8g.PNG.bunnyready/result_m7.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfOCAg/MDAxNjIyMjMxNTg4MTAz.Imzok21SjKIRSvO5buYcR1TP0HkGo6t9x0gH4D60l1cg.PP3wzxkNiZAugNLNZYz4j2iowi2OPFPgtMB118v3wNMg.PNG.bunnyready/result_m8.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjMg/MDAxNjIyMjMxNTg4MTU3.ykAnFQMr0iKIvHA9p3b-cTg_95NsKbrOk89tuTqmZ7Ig.Wlqnv-5-C5-IewtnRtePBMvDayH2qJomwxWQ5QM45L4g.PNG.bunnyready/result_m9.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTk2/MDAxNjIyMjMxNTg4MTU1.yBHGh2Vb4c026W4kHzi3KlA5PhQs8IW1q08r6izRaWMg.hufK8WBM1iLNp5KN4qlZHEVlNd-UmmcZEO62KDRpzOwg.PNG.bunnyready/result_m10.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjQ2/MDAxNjIyMjMxNTg4MjEy.ipWOnNjYxAon1EJOl9Ko5hr0MnF95LiWoQNQHBM8ydsg.dOPtG1qCPvUV8rkE2yrZa5Yy55yWfgnSoU9bOXIx-Z0g.PNG.bunnyready/result_m11.png?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTk0/MDAxNjIyMjMxNTg4MzA0.6iSAZLC0zqZejijqtghiiISX4XN9yeK8jZ5bToirxUwg.M_ZtPyWwaHduKkpwBmXbxyD_E612Gq7RogzviPdWn9Ig.PNG.bunnyready/result_m12.png?type=w773",
+
+        ]
+
+        const thumb = [
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTEx/MDAxNjIyMjk4MjI4MTAy.dHVVjYnhmuXW-Lhf4vXDwu1ilEhBolk7a_MN2tK1TBYg.tpGVVh_my849IHMcxDuVQkzTRn6eJzmzyBWSgAFVuhcg.PNG.bunnyready/margarita.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMzkg/MDAxNjIyMjk4MjI3OTQz.P4mJE49Qo29jILTDib5Pa49o97DmK-D6YcxBDmBaqywg.9fjru161M1B6JNev_ZcP144pFGY7GM1czAL8kvbYks4g.PNG.bunnyready/aperol_spritz.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjIx/MDAxNjIyMjk4MjI4MDc2.U6zJxHl85em8_np9v2nDfGScwCsMifoeI5m3yj7xmm8g.7WWdDvfdegabL9sYETw9vBYv0tb-OeP7H-XyUgZkR-cg.PNG.bunnyready/daiquiri.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfNjYg/MDAxNjIyMjk4MjI4MDg0.lpkeLOwEavbH_eZui3zbx1YnrZSX1jRU9ibNxhKKkFcg.ePHvgn-pdH-6-fBHjEhCn70WP6lsWZejYU20dyED64wg.PNG.bunnyready/dry_martini.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjg1/MDAxNjIyMjk4MjI4MDkw.FSnjkZoMrZeUXPC0dpjXMw9t1aLQ1bP3zF1zSl0z5agg.4EDFhwqxeQgSGrweLtvmUv7DlBjmhnZ_L6JRuVJ3VWsg.PNG.bunnyready/manhattan.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjI5/MDAxNjIyMjk4MjI4MTU4.yftT6Z3NPU1kv8n-HuIh5nJszG2bm9Q8d6rby0QstC4g.RlC4QP43x1cdxvj9--XqsHta8e5Rp9dE8Mb6yL2w8vsg.PNG.bunnyready/mojitto.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfNjcg/MDAxNjIyMjk4MjI4MzI1.b5EcSCixnlk6dVx2LyDlJ14DFaJSkXvmn-iLkfRoUpEg.HFK-Zijj9J7LRuBmCL8YK0DmfIjrEgBTJIHqrglrikgg.PNG.bunnyready/moscow_mule.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTI5/MDAxNjIyMjk4MjI4NTIz.Po3Ch4WutjAa7WJBFhp0ybuMqzzHHbhQGR-seRzQ8gwg.LeIdIVSoV-z7VP63aEuBTL28jP3pFPSLp9-SRQSusJIg.PNG.bunnyready/negroni.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTky/MDAxNjIyMjk4MjI4NzQy.neEiE5bQ4ntSBaXynKVojpbhrVBsZiZw5GGgdKTIVmYg.-dlqwDFS4o-wWG139UBFYrnhYz5_L1h2yKgDQZ5Wcosg.PNG.bunnyready/old_fashioned.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfODgg/MDAxNjIyMjk4MjI4NjM1.QMUXjSRNGMcWrrRL5mLeXvgHnR9sncXc49tAaX2AUhog.S-rLaFDwWy23CLz8H-cw4hDv91Szzep-VIYu-Lya_oMg.PNG.bunnyready/pina_colada.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMjk2/MDAxNjIyMjk4MjI4NjM2.J1IEzhuSlx1790SmTPCwxQF9d2b113H9NgUJfjpGotEg.5ZpxweFOevGTC4ERSpDwDRObxzTG72FDBQ9L36vj5JAg.PNG.bunnyready/sazerac.PNG?type=w773",
+            "https://postfiles.pstatic.net/MjAyMTA1MjlfMTk1/MDAxNjIyMjk4MjI4NzY1.jW1vDEa_PagPJW4hxU2jl1pj2NkufcKRM41kb32hB5wg.qDdG2tgGFl4Db9jwFkfxYzzm6L-m4xuQG_2u_cW-cbwg.PNG.bunnyready/whiskey_sour.PNG?type=w773",
+            
+        ]
+
+
+        const resultPk = "{{cocktail.pk}}"
+        const realPk = +resultPk - 1
+        console.log(resultPk, typeof (resultPk))
+        body.style.backgroundImage = `url(${urlList[realPk]})`
+
+        Kakao.init('219519e2377a895d1cd60e246905f9be');
+        function sendLinkKakao() {
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: "{{ cocktail.title }}",
+                    description: "{{ cocktail.taste }}",
+                    imageUrl: `${thumb[realPk]}`,
+                    link: {
+                        mobileWebUrl: 'http://127.0.0.1:8000/result/' + realPk,
+                        webUrl: 'http://127.0.0.1:8000/result/' + realPk
+                    }
+                }
+
+            });
+        }
+
+    function clip() {
+        var url = document.location.href;
+        var textarea = document.createElement("textarea");
+        document.body.appendChild(textarea);
+        url = window.document.location.href;
+        textarea.value = url;
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("URL이 복사되었습니다.")
+        }
+    </script>
+</body>
+
+</html>
