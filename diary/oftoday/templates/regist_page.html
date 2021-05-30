@@ -1,0 +1,39 @@
+{% extends "base_nav.html" %}
+
+{% block css %} {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'regist_page.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="sidebar">
+    {% if user.is_authenticated %}
+    <br>
+    <br>
+
+    <div style="color:#a38fabc2; font-weight: 400; font-size: 17px;"> ⓟ ⓡ ⓞ ⓕ ⓘ ⓛ ⓔ </div>
+    <br>
+    <br>
+    <div style="font-size: 15px;"> 𝙝𝙚𝙡𝙡𝙤,<br>
+        {{user.profile_user.nickname}}</div>
+    <br>
+    <div>
+        <div class="me" style="font-size: 15px;">
+            𝙞𝙣𝙛𝙤. <br> {{user.profile_user.introduction}}
+        </div>
+        <br>
+        <div style="font-size: 15px;"> 🎂 <br> {{user.profile_user.birthday}}</div>
+    </div>
+    <br>
+    <br>
+    <a style="  padding: 8px; border: none; background-color: #858492; color: white; font-size: 5pt; width: 20px; border-radius: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;"
+        class="regist_item" href="{% url 'profile_edit' user.pk %}"> Edit </a>
+    <br>
+    <a style="  padding: 8px; border: none; background-color: #858492; color: white; font-size: 5pt; width: 30px; border-radius: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;"
+        class="regist_item" href="{% url 'logout' %}"> logout </a>
+    {% else %}
+    <a class="regist_item" href="{% url 'login' %}"> login </a>
+    <a class="regist_item" href="{% url 'signup' %}">회원가입</a>
+    {% endif %}
+</div>
+{% endblock %}

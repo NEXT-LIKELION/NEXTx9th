@@ -1,0 +1,71 @@
+{% extends "base_nav.html" %}
+
+{% block css %} {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main_detail.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="everything">
+    <div class="top_container">
+        <div class="task">
+            <ul class="sub-container">
+                {% for totd in totds %}
+                <li>
+                    <a href="{% url 'detail_totd' totd.pk %}">{{totd.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="mood">
+            <ul class="sub-container">
+                {% for motd in motds %}
+                <li>
+                    <a href="{% url 'detail_motd' motd.pk %}">{{motd.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="food">
+            <ul class="sub-container">
+                {% for fotd in fotds %}
+                <li>
+                    <a href="{% url 'detail_fotd' fotd.pk %}">{{fotd.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="outfit">
+            <ul class="sub-container">
+                {% for ootd in ootds %}
+                <li>
+                    <a href="{% url 'detail_ootd' ootd.pk %}">{{ootd.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom_container">
+        <div class="go1">
+            <a style="padding: 8px; border: none; background-color: #858492; color: white;   width: 20px; border-radius: 100px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;"
+                class="t" href="{% url 'new_totd' %}">T</a>
+        </div>
+        <div class="go2">
+            <a style="padding: 8px; border: none; background-color: #858492; color: white;  width: 20px; border-radius: 100px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;"
+                class="m" href="{% url 'new_motd' %}">M</a>
+        </div>
+        <div class="go3">
+            <a style="padding: 8px; border: none; background-color: #858492; color: white;   width: 20px; border-radius: 100px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;"
+                class="f" href="{% url 'new_fotd' %}">F</a>
+        </div>
+        <div class="go4">
+            <a style="padding: 8px; border: none; background-color: #858492; color: white;   width: 20px; border-radius: 100px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;"
+                class="o" href="{% url 'new_ootd' %}">O</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'fo_base_new_edit.html' %}
+{% block title %}
+<div class="container">
+    <p style="font-weight:100"> Outfit of Today </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="menu">
+        <input type="text" id="menu" name="title" placeholder="Menu"
+            style="border: none; background-color:#F5F5F5; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter;">
+    </div>
+    <p
+        style=" color: #DCD6D6;  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        ___________________________________ </p>
+    <br>
+    <div class="content">
+        <textarea id="content" name="content" rows="8" cols="45" placeholder="내용을 입력해주세요"
+            style="border: none; background-color:#F5F5F5; text-align: center;"></textarea>
+    </div>
+    <br>
+
+    <input type="date" name='day'>
+    <div class="bar">
+    <button
+        style="border: none; background-color: #858492; color: white; font-size: 12pt; width: 30%; height: 90%; border-radius: 30px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: lighter; "
+        type=" submit"> Save ✓ </button>
+    </div>
+</form>
+{% endblock %}

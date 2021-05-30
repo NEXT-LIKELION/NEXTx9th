@@ -1,0 +1,140 @@
+{% extends "base_nav.html" %}
+
+{% block css %} {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'signup_login.css' %}">
+<link rel="stylesheet" href="../static/base_totd.css"/>
+{% endblock %}
+{% block content %}
+
+
+<div class="signup ">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="header" >
+                <span class="title" style="display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 304px;
+                height: 41px;
+                left: 59px;
+                top: 89px;
+                font-family: NanumGothic;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 18px;
+                text-align: center;
+                margin-left: 45px;
+                color: #000000;"
+                
+            >Task of Today</span>
+            </div>
+            
+            <div class="middle">
+                <div class="title">
+                    <input type="text" name="title" value="{{totd.title}}" placeholder="New Task" style="width: 185px;
+    height: 44px;
+    left: -15px;
+    top: 158px;
+    margin-top: 50px;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: solid;
+    margin-left: 20px;"
+                    >
+                </div>
+
+                <div class="date">
+                    <label for="day" style="margin-left: 20px;">Date</label>
+                    <input type="date" id="due" name="day" value="{{totd.day|date:"Y-m-d"}}" style="
+                    /* position: absolute; */
+                    width: 304px;
+                    height: 41px;
+                    left: -40px;
+                    top: 209px;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                ">
+                </div>
+            </div>
+
+            <div class="todo">
+                <textarea name="content" placeholder="할 일을 적어보세요." rows="30" cols="30" style="
+                /* position: absolute; */
+                width: 384px;
+                height: 444px;
+                left: 15px;
+                top: 303px;
+                background: rgba(245, 245, 245, 0.9);
+                border-radius: 15px;
+                margin-top: 15px;
+                border-style: none;
+            ">{{totd.content}}</textarea>
+            </div>
+
+            <button type="submit" style="
+            width: 108px;
+            height: 44px;
+            left: 157px;
+            top: 770px;
+            background: rgba(133, 132, 146, 0.85);
+            border-radius: 34px;
+            border-style: none;
+            margin-top: 15px;
+            margin-left: 135px;
+        ">Save</button>
+        </div>
+    </form>
+    <br>
+
+    <br>
+    <br>
+    <div class="color" style="display: flex;">
+        <label for="color_tag">Color</label>
+        <div class="color_palette" style="
+        display: flex;
+        
+    ">
+            <div class="theme_1" style="background-color: #FDFBC7;"></div>
+            <div class="theme_2" style="background-color: #ECC5C7;"></div>
+            <div class="theme_3" style="background-color: #E29EAF;"></div>
+            <div class="theme_4" style="background-color: #A38FAB;"></div>
+            <div class="theme_5" style="background-color: #918DAB;"></div>
+            <div class="theme_6" style="background-color: #79849F;"></div>
+        </div>
+
+        <div class="colorBoard" style="width: 30px; height: 30px; display: none;"></div>
+        <!-- <div></div> -->
+        <button class="change" style="width: 58px;
+        height: 30px;
+        left: 157px;
+        top: 770px;
+        background: rgba(133, 132, 146, 0.85);
+        border-radius: 34px;
+        border-style: none;"">선택</button>
+    </div>
+
+    <script type="text/javascript">
+    const colorbutton = document.querySelector(".change");
+    const colorPalette = document.querySelector('.color_palette')
+
+    let selectedColor= ''
+
+    colorPalette.addEventListener('click',(event)=>{
+        selectedColor = event.target.style.backgroundColor
+    })
+
+    colorbutton.addEventListener('click',()=>{
+        localStorage.setItem("color",selectedColor)
+    })
+    // 여기서부터 다른 페이지
+    const colorBoard = document.querySelector('.colorBoard')
+    const savedColor = localStorage.getItem('color')
+    colorBoard.style.backgroundColor = savedColor
+    </script>
+</div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'fo_base_new_edit.css' %}">
+    {% block css %}
+
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fo_new</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="all">
+            <div class="title">
+                {% block title %}
+
+                {% endblock title %}
+            </div>
+
+            <div class="wrapper">
+                <!-- <div class="image">
+                    <input type='file' class='imgInput' id='logoImg' accept='image/*' name='file'
+                        style="visibility:hidden;"">
+                    <img class=" uploadImg" src="" style="width: 50px" />
+                </div>
+                <button class="imgButton" style="border: none; font-size: large; background-color:#F5F5F5;"> 📷
+                </button>
+                <script type="text/javascript">
+                    const fileInput = document.querySelector('.imgInput')
+                    const imgButton = document.querySelector('.imgButton')
+                    const uploadImg = document.querySelector('.uploadImg')
+                    // const imgName = document.querySelector('.imgName')
+
+                    imgButton.addEventListener('click', () => {
+                        fileInput.click();
+                    })
+
+                    fileInput.addEventListener('change', (event) => {
+                        const filename = event.target.files[0].name
+                        uploadImg.setAttribute('src', `./static/${filename}`)
+                        imgName.textContent = filename
+                    })
+                </script> -->
+                <br>
+                <br>
+                {% block content %}
+
+                <!-- <div class="menu">
+                    <input type="text" id="menu" name="menu" placeholder="Menu"
+                        style="border: none; background-color:rgba(245, 245, 245, 0.9); text-align: center;">
+                </div> -->
+                {% endblock content %}
+                
+            </div>
+
+    </form>
+</body>
+
+</html>

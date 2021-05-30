@@ -1,0 +1,14 @@
+{% extends 'base_nav.html' %}
+{% block content %}
+<div class="container">
+    <br>
+    <div class="outer">
+        <a style="height:10px; font-weight:lighter; black; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+            class="btn btn-info left" href="{% url 'home_fotd' %}?{{ prev_month }}"><span>
+                < </span> </a>
+        <a style="height:10px; font-weight: lighter; color: black; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+            class="btn btn-info right" href="{% url 'home_fotd' %}?{{ next_month }}"><span> > </span> </a>
+    </div>
+    {{calendar}}
+</div>
+{% endblock %}

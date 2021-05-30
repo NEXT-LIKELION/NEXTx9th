@@ -1,0 +1,54 @@
+{% extends "base_nav.html" %}
+
+{% block css %} {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'signup_login.css' %}">
+{% endblock %}
+{% block content %}
+
+
+<div class="signup ">
+    <div class="wrapper">
+        <div class="header">
+            <!-- X쳐서 뒤로 가는거  -->
+            <span class="title">Task of Today</span>
+        </div>
+        
+        <div class="middle">
+            <div class="title">
+                <h2>{{ totd.title }}</h2>
+            </div>
+
+            <div class="date">
+                {{totd.date}} {{totd.time}}
+            </div>
+        </div>
+
+        <div class="todo">
+            <p>{{ totd.content }}</p>
+        </div>
+    </div>
+
+    <div class="color">
+        <div class="color_palette">
+            <div class="theme_1" style="background-color: #FDFBC7;"></div>
+            <div class="theme_2" style="background-color: #ECC5C7;"></div>
+            <div class="theme_3" style="background-color: #E29EAF;"></div>
+            <div class="theme_4" style="background-color: #A38FAB;"></div>
+            <div class="theme_5" style="background-color: #918DAB;"></div>
+            <div class="theme_6" style="background-color: #79849F;"></div>
+        </div>
+    </div>
+    <a href="{% url 'edit_totd' totd.pk %}">EDIT</a>
+    <a href="{% url 'delete_totd' totd.pk %}">DELETE</a>
+
+    <script type="text/javascript">
+
+    const colorBoard = document.querySelector('.wrapper')
+    const savedColor = localStorage.getItem('color')
+    colorBoard.style.backgroundColor = savedColor
+
+    </script>
+</div>
+
+{% endblock %}

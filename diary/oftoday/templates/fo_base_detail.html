@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'fo_base_new_edit.css' %}">
+    {% block css %}
+
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fo_new</title>
+</head>
+
+<body>
+    <div class="all">
+        <div class="title">
+            {% block title %}
+
+            {% endblock title %}
+        </div>
+
+        <div class="wrapper">
+            <br>
+            <br>
+            {% block content %}
+
+            {% endblock content %}
+            
+    </div>
+</body>
+
+</html>
