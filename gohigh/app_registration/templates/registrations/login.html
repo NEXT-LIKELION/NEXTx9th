@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "{% static 'app_registration/login.css' %}"> 
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="wrapper">
+            <div class="logo">
+                <img class="title" src="https://user-images.githubusercontent.com/69626443/120006329-c3fd4880-c013-11eb-93c2-02671602c436.png">
+                <p class="sub_title">
+                    교내 정산형 스터디 플랫폼
+                </p>
+            </div>
+    
+            <div class="input">
+                {% if error %}
+                <p class ="error">{{ error }}</p>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input class="Rectangle-210" type="text" name="username" placeholder="Email address">
+                    </br>
+                    <input class="Rectangle-210" type="password" name="password" placeholder="Password">
+                    </br>
+                    <button class="Rectangle-235" type="submit">로그인</button>
+                </form>
+            </div>
+
+            <div class=outer>
+                <button type="button" class="signup" onClick="location.href='{% url 'signup' %}'">회원가입하기 ></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

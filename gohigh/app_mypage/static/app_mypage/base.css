@@ -1,0 +1,40 @@
+
+*{
+    margin : 0;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    text-decoration: none; 
+}
+
+.container{
+    background-color: #fdfdfd;
+    /* margin-bottom: 0; */
+}
+
+.nav-bar{
+    position: fixed;
+    bottom: 2vh;
+    display: flex;
+    height : 100px;
+    width : 100%;
+    box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    justify-content: space-between;
+}
+#nav-tap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* 순서 : 상 우 하 좌 */
+    padding : 20px 35px 25px 35px;
+}
+#nav-icon{
+    width : 28px;
+    height : 28px;
+    color : #ccd2e3;
+}
+.nav-txt{
+    font-size: 14px;
+    font-weight: 400; 
+    color : #ccd2e3;
+}

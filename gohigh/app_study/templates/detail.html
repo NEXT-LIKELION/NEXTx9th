@@ -1,0 +1,81 @@
+{% extends 'study_base.html' %} 
+
+{% block content %} 
+
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'app_study/detail.css'%}"/>
+
+    <div class="header" id ="icon-back">
+        <a href ="{% url 'studyhome' %}">
+        <i id ="icon-back" class="fas fa-arrow-left"></i>
+        </a>
+        <div id="join-count">{{ study.joins.count }}
+        <i id = "icon-like" class="far fa-heart"></i></div>
+    </div>
+
+
+    <div class ="study-detail">
+
+        {% if study.category == 'career' %}
+            <div class="study-wrapper-career">
+        {% endif %}
+        {% if study.category == 'exam' %}
+            <div class="study-wrapper-exam">
+        {% endif %}
+        {% if study.category == 'daily' %}
+            <div class="study-wrapper-daily">
+        {% endif %}
+        {% if study.category == 'language' %}
+            <div class="study-wrapper-language">
+        {% endif %}        
+        {% if study.category == 'programming' %}
+            <div class="study-wrapper-programming">
+        {% endif %}
+        {% if study.category == 'economy' %}
+            <div class="study-wrapper-economy">
+        {% endif %}        
+        {% if study.category == 'design' %}
+            <div class="study-wrapper-design">
+        {% endif %}
+        {% if study.category == 'etc' %}
+            <div class="study-wrapper-etc">
+        {% endif %}
+
+        <div class ="study-box">
+            <div class = "study-txt">
+            <p class ="study-name">{{ study.name }}</p>
+            <div class ="study-form">
+                <div class = "study-form-d"><p>분야</p> <p>{{ study.category }}</p></div>
+                <div class = "study-form-d"><p>모집인원</p><p>{{ study.num_member }}</p></div>
+                <div class = "study-form-d"><p>총인원</p><p>{{ study.max_member }}</p></div>
+                <div class = "study-form-d"><p>위치</p><p>{{ study.location }}</p></div>
+                <div class = "study-form-d"><p>기간</p><p>{{ study.period }}</p></div>
+                <div class = "study-form-d"><p>보증금</p><p>{{ study.deposit }}</p></div>
+            </div>
+            <p class ="study-cnt" row ="20" col="30">{{ study.content }}</p>
+            <button id="join-button" onclick="join()">참여신청</button>
+            </div>
+            </div>
+        </div>
+
+    <!-- <a href ="{% url 'studyhome' %}">
+    </a> -->
+
+    
+
+</div>
+
+<script>
+    const join = () => {
+        fetch('/study/join', {
+            method: "POST",
+            body: JSON.stringify({ study_pk: "{{ study.pk }}"})
+        })
+        .then(response => response.json())
+        .then(res => document.getElementByID('join-count').innerHTML = '인기도'+res.join_count)
+        // .catch(error => console.error(err))}
+</script>
+
+
+
+{% endblock content %}

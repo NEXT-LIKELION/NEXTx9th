@@ -1,0 +1,57 @@
+* {
+    margin : 0;
+    box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.total {
+    display:flex;
+    flex-direction: column;
+    align-items : center;
+    justify-content : center;
+    height: 100%;
+    background-image: radial-gradient(circle at 0 0, #dde2ff, rgba(255, 255, 255, 0)), radial-gradient(circle at 0 0, #ff5454, #ffecec, rgba(255, 240, 240, 0), rgba(255, 206, 206, 0));   
+}
+
+.box{
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+}
+
+.logo{
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    right : 50%;
+
+}
+
+.middle{
+    display:flex;
+    flex-direction: row;
+    justify-content : center;
+    margin-bottom: 2%;
+}
+
+.logo_wording {
+    width:155px;
+}
+
+p{
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #6e7aff;
+    margin-bottom : 30px;
+}
+

@@ -1,0 +1,148 @@
+*{
+    text-decoration: none; 
+}
+
+html, body{
+    height: 100%;
+}
+
+input{
+    border:none;
+}
+
+.header{
+    margin-left: 7%;
+    margin-top: 13%;
+    margin-bottom: 7%;
+    color: black;
+    opacity: 0.8;
+}
+
+.study-detail{
+    /* display: flex;
+    flex-direction: column; */
+    height : 100%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom : 30
+
+}
+
+.study-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding : 30px;
+    width : 100%;
+    height : 100%;
+}
+
+.study-wrapper-career{
+    width : 100%;
+    height : 100%;
+    background-color: #f4f8c1;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-exam{
+    margin-bottom: 15px;
+    background-color: #E2EEDD;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-daily{
+    margin-bottom: 15px;
+    background-color: #CCD0FF;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-language{
+    margin-bottom: 15px;
+    background-color: #FFD7D6;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-programming{
+    margin-bottom: 15px;
+    background-color: #DFEEFC;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-economy{
+    margin-bottom: 15px;
+    background-color: #F1E4EE;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-design{
+    margin-bottom: 15px;
+    background-color: #FEDEA6;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-wrapper-etc{
+    margin-bottom: 15px;
+    background-color: #ECEEF3;
+    height: 120px;
+    display:flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.study-name{
+    font-size: 24px;
+    text-align: left;
+
+}
+.study-form{
+    font-size : 14px;
+    text-align: left;
+}
+.study-cnt{
+    overflow: auto;
+    height: 340px;
+    text-align: left;
+}
+
+.study-txt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+}
+.study-form-d{
+    display: flex;
+    text-align: left;
+}
+
+#join-button{
+    background-color: #333333;
+    width: 290px;
+    height: 55px;
+    padding: 7px 40px 7px 40px;
+    border-radius: 51px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}

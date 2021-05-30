@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, target-densitydpi = medium-dpi" user-scalable=no>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href ="{% static 'app_study/study_base.css' %}">
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <title>gohigh</title>
+</head>
+
+
+<body>
+    <div class="contatiner">
+        
+        {% block content %}
+
+        {% endblock content %}
+    
+        <!-- nav-bar -->
+        <div class="nav-bar">
+
+            <a href ="{% url 'studyhome' %}">
+                <div class="home" id ="nav-tap" >
+                    <i id = "nav-icon" class="fas fa-home" width ="120%" height = "28px"></i>
+                    <p class="nav-txt">홈</p>
+                </div>
+            </a>
+
+            <a href ="{% url 'new' %}">
+            <div class="add" id ="nav-tap">
+                <i id = "nav-icon" class="fas fa-plus"></i>
+                <p class="nav-txt">추가</p>
+            </div>
+            </a>
+
+            <a>
+            <div class="profile" id ="nav-tap">
+                <i id = "nav-icon" class="far fa-user-circle"></i>
+                <p class="nav-txt">프로필</p>
+            </div>
+            </a>
+        </div>    
+    </div>
+</body>
+</html>

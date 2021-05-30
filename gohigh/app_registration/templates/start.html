@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app_registration/start.css' %}">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <title>고공행진!</title>
+</head>
+<body>
+    <div class="total">
+        <div class="box">
+            <img class="logo" src="https://user-images.githubusercontent.com/69626443/120006416-d4adbe80-c013-11eb-9dcd-27de09171bb1.png" alt="이미지 오류">
+        </div>
+        <div class="middle">
+            <img class="logo_wording" src="https://user-images.githubusercontent.com/69626443/120006329-c3fd4880-c013-11eb-93c2-02671602c436.png" alt="이미지 오류">
+        </div>
+        <div class="bottom">
+            <p>고대생, 공부행진!</p>
+        </div>
+        
+    </div>
+    
+    
+    
+</body>
+<script>
+    const tap = document.querySelector(".total")
+    tap.addEventListener("click", function(){
+        location.href="login";
+    });
+</script>
+</html>

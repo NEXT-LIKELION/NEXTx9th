@@ -1,0 +1,121 @@
+
+{% extends 'study_base.html' %} 
+
+{% block content %} 
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href ="{% static 'app_study/studyhome.css'%}"/>
+
+<div class = "content-wrapper">
+
+<!-- header -->
+<div class = "header">
+    <div class="header-txt-bold">오늘의</div>
+    <div class="header-txt">추천스터디</div>
+</div>
+
+
+<div class="category">
+    
+    <a href = {% url 'studyhome' %}>
+        <span class="category-wrapper">
+            <img class ="all"  src="https://user-images.githubusercontent.com/69626443/120006334-c52e7580-c013-11eb-892b-20cde99ba220.png" width = "65px" alt="all">
+            <p class="category-txt">전체</p>
+        </span>
+    </a>
+
+    <a href = {% url 'category' 'career' %}>
+        <span class="category-wrapper">
+            <img src="https://user-images.githubusercontent.com/69626443/120006339-c65fa280-c013-11eb-922f-2053cf8d7f13.png"  width ="65px" alt="career">
+            <p class="category-txt">취업</p>
+        </span>
+
+    <a href = {% url 'category' 'exam' %}>
+        <span class="category-wrapper">
+            <img src="https://user-images.githubusercontent.com/69626443/120006395-d11a3780-c013-11eb-8c62-a918438e5c75.png"  width = "65px" alt="exam">
+            <p class="category-txt">고시/공무원</p>
+        </span>
+    </a>
+    
+    <a href = {% url 'category' 'daily' %}>
+        <span class="category-wrapper">
+            <img src="https://user-images.githubusercontent.com/69626443/120006343-c790cf80-c013-11eb-9ffe-7044cfe3150e.png" width ="65px" alt="daily">
+            <p class="category-txt">일상</p>
+        </span>
+    </a>
+
+    <a href = {% url 'category' 'language' %}>
+    <span class="category-wrapper">
+        <img  src="https://user-images.githubusercontent.com/69626443/120006401-d24b6480-c013-11eb-97c3-1229fd0324e8.png"  width = "65px" alt="language">
+        <p class="category-txt">어학</p>
+    </span>
+    </a>
+
+    <a href = {% url 'category' 'programming' %}>
+        <span class="category-wrapper">
+            <img src="https://user-images.githubusercontent.com/69626443/120080196-b8cd1a00-c0f2-11eb-904a-8f9994707880.png" width = "65px"  alt="programming">
+            <p class="category-txt">프로그래밍</p>
+        </span>
+    </a>
+
+    <a href = {% url 'category' 'economy' %}>
+        <span class="category-wrapper">
+            <img  src="https://user-images.githubusercontent.com/69626443/120006381-cd86b080-c013-11eb-9d83-8648cfbff4ab.png"  width = "65px" alt="economy">
+            <p class="category-txt">경제</p>
+        </span>
+    </a>
+
+    <a href = {% url 'category' 'design' %}>
+        <span class="category-wrapper">
+            <img  src="https://user-images.githubusercontent.com/69626443/120006360-c9f32980-c013-11eb-964c-71d9e07a0942.png" width = "65px"  alt="design">
+            <p class="category-txt">디자인/영상</p>
+        </span>
+    </a>
+
+    <a href = {% url 'category' 'etc' %}>
+        <span class="category-wrapper">
+            <img src="https://user-images.githubusercontent.com/69626443/120006387-cfe90a80-c013-11eb-8116-d9cdc7d0dd8a.png"  width = "65px"alt="etc">
+            <p class="category-txt">기타</p>
+        </span>
+    </a>
+</div>
+
+
+<ul class ="study-list">
+{% for study in studys %}
+    <div class = "study-wrapper">
+    {% if study.category == 'career' %}
+        <a class="study-wrapper-career" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category == 'exam' %}
+        <a class="study-wrapper-exam" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category == 'daily' %}
+        <a class="study-wrapper-daily" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category ==  'language' %}
+        <a  class="study-wrapper-language" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category ==  'programming' %}
+        <a class="study-wrapper-programming" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category ==  'economy' %}
+        <a class="study-wrapper-economy" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category ==  'design' %}
+        <a class="study-wrapper-design" href="{% url 'detail' study.pk %}">
+    {% endif %}
+    {% if study.category == 'etc' %}
+        <a class="study-wrapper-etc" href="{% url 'detail' study.pk %}">
+    {% endif %}
+            <div class = "study-txt">
+                <p class="study-title">{{ study.name }}</p>
+                <p class="study-location">{{ study.location }}</p>
+            </div>
+            {% comment %} <div class = "study-button">+</div> {% endcomment %}
+        </a>
+    </div>
+{% endfor %}
+</ul>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+
+<p style = "font-size:18px; color:#6e7aff; text-align: center; font-weight: 500;">{{user.username}}님, 
+아래 링크를 클릭하여 계정을 활성화해주세요 :)
+<img class="logo" src="https://user-images.githubusercontent.com/69626443/120085504-b7f8b000-c113-11eb-8046-68fb9dd4677d.png" width ="300px" alt="이미지 오류">
+</p>
+<a style = "text-align:center;" class = "active-btn" href="{{domain}}{% url 'activate' uid token %}">
+    <p style = "text-align:center; font-size:18px; height:38px; border-radius: 25px; color:white; background-color: #6e7aff; padding:15px; text-decoration: none; width:130px;">고공행진 로그인</p>
+</a>

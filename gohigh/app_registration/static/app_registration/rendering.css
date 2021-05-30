@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: radial-gradient(circle at 0 0, #dde2ff, rgba(255, 255, 255, 0)), radial-gradient(circle at 0 0, #ff5454, #ffecec, rgba(255, 240, 240, 0), rgba(255, 206, 206, 0));
+}
+
+.rocket {
+    width: 160px;
+    margin: 80px 0 10px;
+}
+
+.msg{
+
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #6e7aff;
+    margin-bottom: 100px;
+}

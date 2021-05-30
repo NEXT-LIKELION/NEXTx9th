@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href = "{% static 'app_registration/signup.css' %}"> 
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <title>signup</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="wrapper">
+            <div class="logo">
+                <img class="title" src="https://user-images.githubusercontent.com/69626443/120006329-c3fd4880-c013-11eb-93c2-02671602c436.png">
+                <p class="sub_title">
+                    고대생과 함께 공부 행진!
+                </p>
+            </div>
+    
+            <div class="wrapper input">
+                <form method="POST" action="{% url 'signup'%}">
+                    {% csrf_token %}
+                    <div>
+                        <p class="name">Username</p>
+                        <input class="Rectangle-105" name="username" type="text" value="">
+                    </div>
+                    <div>
+                        <p class="name">KU mail</p>
+                        <div class="outer_email">
+                            <input class="Rectangle-50" id="id" name="id"  placeholder="포털 아이디" required>
+                            <p class="email_name" id="korea">@korea.ac.kr</p></span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <p class="name">Password</p>
+                        <input class="Rectangle-105" name="password1" type="password" value="">
+                    </div>
+                    <div>
+                        <p class="name">Confirm Password</p>
+                        <input class="Rectangle-105" name="password2" type="password" value="">
+                    </div>
+
+                    <input class="signup" type="submit" value="Sign Up!">
+                </form>
+
+            </div>
+</body>
+</html>

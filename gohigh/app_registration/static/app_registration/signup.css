@@ -1,0 +1,141 @@
+
+*{
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+input::placeholder {
+    font-size: 16px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    color: #adb4ff;
+  }
+
+.outer{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+
+.email{
+    width: 100%;
+    justify-content:space-between
+    
+}
+
+.wrapper{
+    margin-left: 7%;
+    margin-right: 7%;
+    display:flex;
+    box-sizing: border-box;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.center{
+    justify-content: center;
+}
+
+.logo{
+    display:flex;
+    box-sizing: border-box;
+    flex-direction:column;
+    margin-top:40%;
+    margin-bottom: 30px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.input{
+    display:flex;
+    flex-direction:column;
+    border : none;
+}
+.input:focus{
+    outline:none;
+}
+
+.Rectangle-50{
+    border :none;
+    margin-left:5%;
+    width:50%;
+}
+
+.sub_title{
+    margin-top: 10px;
+    width: 195px;
+    height: 23px;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #adb4ff;
+}
+
+.title{
+    width: 45%;
+}
+.signup {
+    width: 100%;
+    height: 58px;
+    margin-top:2%;
+    border-radius: 47px;
+    border: solid 2px #ffffff;
+    color: white;
+    font-weight: 500;
+    font-size : 18px;
+    background-color : #6e7aff;
+    margin-bottom:30%;
+}
+
+.Rectangle-105 {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 4%;
+    padding: 10px 90px 10px 15px;
+    border-radius: 36px;
+    border: solid 2px #6e7aff;
+    background-color: white;
+  }
+
+  .name{
+    padding-left:4%;
+    padding-bottom:1%;
+    font-weight: 500;
+    font-size: 15px;
+    font-display: center;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+
+.email_name{
+    color: #6e7aff;
+    background-color: white;
+
+}
+
+.outer_email{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: solid 2px #6e7aff;
+    border-radius: 36px;
+    margin-bottom: 4%;
+}
+
+.presetting{
+    margin-top:40%;
+    margin-bottom: 30px;
+    margin-left: 7%;
+    margin-right: 7%;
+    color: #6e7aff;
+    font-size: 32px;
+
+}

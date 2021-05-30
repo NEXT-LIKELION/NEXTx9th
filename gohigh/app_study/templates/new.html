@@ -1,0 +1,50 @@
+{% extends 'study_base.html' %} 
+{% block content %} 
+{% load static %}
+<link rel="stylesheet" type ="text/css" href ="{% static 'app_study/detail.css'%}"/>
+
+<div class="header" id ="icon-back">
+    <a href ="{% url 'studyhome' %}">
+    <i id ="icon-back" class="fas fa-arrow-left"></i>
+    </a>
+    <div id="join-count">{{ study.joins.count }}
+    <i id = "icon-like" class="far fa-heart"></i></div>
+</div>
+
+<form action ="" method="POST">
+    {% csrf_token %}
+<div class="study-detail">
+  <div class ="study-box">
+    <input type="text" name="name" placeholder="스터디 이름" />
+    <label for ="name">분야
+        <input type="radio" name="1" value ="career" placeholder="취업"/><p>취업</p>
+        <input type="radio" name="1" value ="exam" placeholder="고시/공무원"/>고시/공무원
+        <input type="radio" name="1" value ="daily" placeholder="일상"/>일상
+        <input type="radio" name="1" value ="language" placeholder="어학"/>어학
+        <input type="radio" name="1" value ="programming" placeholder="프로그래밍"/>프로그래밍
+        <input type="radio" name="1" value ="economy" placeholder="경제"/>경제
+        <input type="radio" name="1" value ="design" placeholder="디자인/영상"/>디자인/영상
+        <input type="radio" name="1" value ="etc" placeholder="기타"/>기타
+    </label>
+  <label for ="num_member">모집인원</label>
+      <input type="number" name="num_member" placeholder="모집인원" />
+  <label for ="max_number">총인원</label>
+      <input type="number" name="max_member" placeholder="총인원"/>
+  <label for ="period">기간</label>
+      <input type="text" name="period" placeholder="기간" />
+  <label for ="location">위치</label>
+      <input type="text" name="location" placeholder="위치" />
+
+  <label for ="deposit">보증금</label>
+      <input type="number" name="deposit" placeholder="보증금" />
+    <input type="text" name="content" cols ="10" rows = "10" placeholder="내용을 입력해주세요" />
+    <button type="submit">업로드</button>
+  </form>
+</div>
+</div>
+
+{% endblock content %}
+
+
+
+

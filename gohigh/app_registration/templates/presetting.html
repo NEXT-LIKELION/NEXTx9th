@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href = "{% static 'app_registration/signup.css' %}"> 
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <title>presetting</title>
+</head>
+<body>
+    <p class="presetting">프로필 정보를</p> 
+    <p class="presetting">추가해주세요</p>
+    <form action="" method="post">
+        {%	csrf_token %}
+        <label for="nickname" class="name" >닉네임</label>
+        <input class="Rectangle-105"  type="text" id="nickname" name="nickname" placeholder="닉네임">
+
+        <label for="location" class="name" >거주지</label>
+        <input class="Rectangle-105"  type="text" id="location" name="location" placeholder="거주지">
+
+        <!-- <label for="point">포인트</label>
+        <input type="hidden" id="point" name="point" placeholder="포인트"> -->
+
+        <label for="university" class="name">학교</label>
+        <input class="Rectangle-105"  type="text" id="university" name="university" placeholder="학교">
+
+        <label for="department" class="name">학과</label>
+        <input class="Rectangle-105" type="text" id="department" name="department" placeholder="학과">
+
+        
+        <button type="submit" class="signup">작성하기</button>
+    </form>
+
+
+    
+    
+</body>
+</html>
