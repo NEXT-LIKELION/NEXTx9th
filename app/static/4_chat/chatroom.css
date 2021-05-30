@@ -1,0 +1,154 @@
+#room-top{
+    height: 88px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 0px 16px 22px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow:0 10px 10px -7px rgb(0 0 0 / 10%)
+}
+
+
+
+#room-top .profile-img {
+    width: 46px;
+    height: 46px;
+    
+}
+
+#room-top .friend-name {
+    padding: 10px;
+    font-size: 15px;
+}
+
+#room-body{
+    /* height: 570px; */
+    overflow-y: scroll;
+    padding: 17px 22px 40px 22px;
+}
+
+#room-body::-webkit-scrollbar {
+    display: none;
+}
+
+#room-body .chat {
+    margin: 3px 0;
+}
+
+#room-body .chat-send {
+    display: flex;
+}
+
+.read {
+    position: relative;
+    width: 10px;
+
+}
+
+.read div {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    color: rgb(255, 86, 86);
+}
+
+
+
+#room-body .chat p {
+    border: none;
+    border-radius: 25px;
+    min-height: 50px;
+    min-width: 50px;
+    max-width: 260px;
+    display: inline-block;
+    padding: 12px 22px;
+}
+
+#room-body .chat-send p {
+    color: white;
+    background-color: #18A0FB;
+}
+
+#room-body .chat-recieve p {
+    color: black;
+    background-color: #F8FAFD;
+}
+
+
+#room-foot{
+    padding: 15px 17.5px;
+}
+
+#chat-input {
+    width: 340px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    padding: 8px 10px 8px 15px;
+    box-shadow:0 30px 60px 12px rgba(0, 0, 33, 0.05),
+    0 4px 24px 0 rgba(0, 0, 33, 0.05),
+    0 0 1px 0 rgba(0, 0, 33, 0.09) ;
+    display: flex;
+    position: fixed;
+    bottom: 90px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-input input {
+    height: 44px;
+    width: 265px;
+    font-size: 15px;
+    padding-left: 5px;
+    border: none;
+    background-color: white;
+}
+
+#chat-input button {
+    width: 44px;
+    height: 44px;
+    background-color: #18A0FB;
+    border: none;
+    border-radius: 22px;
+}
+
+.profile-img {
+    height: 66px;
+    width: 66px;
+    border-radius: 33px;
+    object-fit: cover;
+    margin: 0 10px;
+    /* vertical-align: */
+}
+
+#room-top .back {
+    display: flex;
+    border-radius: 40px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background-color: #f8fafd;
+    justify-content: center;
+    align-items: center;
+    margin: 9px 12px 0 0;
+}
+.time {
+    font-size: 12px;
+    color: #a7b0c0;
+    margin: 5px;
+}
+.go {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.come {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.message {
+    margin: 0;
+    word-break:break-all;
+}

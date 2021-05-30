@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%load static%}
+{% block css %}
+
+<link rel="stylesheet" href="{% static '0_registration/signup.css' %}">
+{% endblock css %}
+
+{% block container %}
+<div class="header">
+    <div id="back">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <a target="_blank" href="https://open.kakao.com/o/sVADQXfd" id="kakao"> 문의하기 </a>
+</div>
+<h1>회원가입</h1>
+<span class="explain1">※ 개인정보는 코독 관련 중요 공지사항을 보낼때</br>
+    이외에 절대 사용하지 않습니다.</span>
+{% if error %}
+<div style="color:red;">{{ error }}</div>
+{% endif %}
+<form id="login" action="" method="POST">
+    {% csrf_token %}
+    <div class="login_container">
+        <i class="far fa-user"></i>
+        <input id="id" type="text" name="username" required placeholder="아이디">
+    </div>
+    <div class="login_container2">
+        <i class="fas fa-lock"></i>
+        <input id="pw" type="password" name="password" required placeholder="비밀번호">
+    </div>
+    
+    <button id="submit" type="submit">확인</button>
+</form >
+
+{% endblock container %}

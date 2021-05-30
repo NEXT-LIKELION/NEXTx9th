@@ -1,0 +1,81 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.wrap {
+    margin: 0 auto;
+    max-width: 375px;
+    height: 100%;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: flex-start;
+    padding-bottom: 90px;
+}
+
+
+  
+
+.footer {
+    max-width: 375px;
+    display: flex;
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.1);
+}
+  
+  
+.footer-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+}
+  
+.fa-home {
+    display: flex;
+    color: #8C94A4;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+  
+  
+  
+.fa-comment-dots {
+    display: flex;
+    color: #8C94A4;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}

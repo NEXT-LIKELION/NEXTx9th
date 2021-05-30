@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '0_registration/reset.css' %}">
+    <link rel="stylesheet" href="{% static '0_registration/main.css' %}">
+    <title>코독 | codok</title>
+</head>
+<body>
+    
+    <section>
+        <div class='container'>
+            <video id="video" autoplay loop muted controls>
+               <source src="{% static 'video/main.mp4' %}" type="video/mp4">
+           </video>
+       </div>
+        <div class = "content">
+            <div class = "about">
+                <div class="description">고독한 독강은 멈춰!</div>
+                <div>
+                    <img src="{% static 'img/image 483.png' %}" alt="">
+                    <span class="codok">Codok</span>
+                    <img src="{% static 'img/image 484.png' %}" alt="">
+                </div>
+            </div>
+            <div class = "sign">
+                <div class="login">
+                    <a href="{% url 'login' %}"><div class="login-text">로그인</div></a>
+                </div>
+                <div class="signIn">
+                    <a href="{% url 'signup' %}"><div class="sign-text">회원가입</div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+</html>

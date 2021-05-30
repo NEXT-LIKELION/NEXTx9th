@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    width: 100%;
+}
+h1 {
+    font-size: 28px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    margin-left: 20px;
+    text-align: left;
+    color: #12121d;
+}
+.table {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.col {
+    width: 65px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.5px solid #d4dceb;
+
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    font-size: 10px;
+}
+.color {
+    width: 65px;
+    height: 80px;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 1px;
+    border-left: 0.5px solid white;
+    border-right: 0.5px solid white;
+    border-radius: 6px;
+    font-size: 10px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    color: white;
+}
+
+.color0 {
+    background-color: #73DBE8;
+} 
+.color1 {
+    background-color: #7BA7FE;
+} 
+.color2 {
+    background-color: #70C1F9;
+} 
+.color3 {
+    background-color: #C0CADB;
+} 
+.color4 {
+    background-color: #FFBCF0;
+} 
+.color5 {
+    background-color: #BCA4FF;
+} 
+.color6 {
+    background-color: #5FE9D0;
+} 
+.color7 {
+    background-color: #A7B0C0;
+} 
+
+
+
+.col_time {
+    width: 50px;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    border: 0.5px solid white;
+
+    font-size: 15px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+}
+
+.cross {
+    width: 50px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+
+    font-size: 10px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    color: white;
+    /* border-bottom: 0.5px solid gray; */
+}
+
+.time {
+    width: 50px;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    border-top: 0.5px solid #d4dceb;
+
+    font-size: 10px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+}
+
+.study {
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    display: -webkit-box;
+    word-break: break-all;
+    width: 90%; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
+.day {
+    width: 65px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+
+    font-size: 13px;
+    color: gray;
+    /* border-bottom: 0.5px solid gray; */
+}
+.semester {
+
+    font-size: 13px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    line-height: 16px;
+    text-align: right;
+    margin: 10px 10px 10px 0;
+    color: #A7B0C0;
+}
+.nontable {
+    display: flex;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div {
+    text-align: center;
+}
+.non {
+    display: flex;
+    width: 300px;
+    height: 40px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    margin: 10px 40px 0 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 28px 0 rgba(75, 88, 208, 0.15);
+    background-color: #ffffff;
+}
+.center {
+    margin-top: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.big {
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: -0.14px;
+    text-align: center;
+    color: #8c94a4;
+    margin: 13px 11px 9px 1px;
+}
+.small {
+    margin: 9px 6px 233px 16px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: -0.07px;
+    text-align: center;
+    color: #a7b0c0;
+    }
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+#bbBtn {
+    margin-top: 17px;
+    margin-right: 19px;
+    display: flex;
+    border-radius: 98px;
+    border-style: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background-color: #f8fafd;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    flex-grow: 0;
+    box-shadow: 10px 10px 20px 0 rgba(174, 174, 192, 0.3), -10px -10px 30px 0 #ffffff;
+  
+}
+
+#bbBtn:hover {
+    background-color: #a7b0c0;
+    color: #EEEEEE;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: auto; */
+    background-color: rgb(0,0,0);
+    background-color: rgba(18,18,29,0.6);
+}
+
+.bbModal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 150px auto;
+    padding: 50px;
+    border: 1px solid #888;
+    max-width: 320px;
+    height: 500px;
+    border-radius: 30px;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+input {
+    border-radius: 10px;
+    height: 35px;
+    margin: 0 0 10px 0;
+}
+
+
+.submit {
+    margin-top:30px;
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    background-color: black;
+    border: none;
+    color: white
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opcity: 1}
+}
+
+.cancel {
+    height: 50px;
+    width: 150px;
+    color: rgb(133, 133, 133);
+    font-size: 14px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    border: none;
+    background-color: white;
+}
+
+.myModal-content {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 375px;
+    height: 300px;
+    border-radius: 25px;
+    animation-name: animatebottom;
+    animation-duration: 0.5s;
+}
+
+@keyframes animatebottom {
+    from {bottom: -100px; opacity: 0}
+    to {bottom: -50px; opacity: 1}
+}
+
+.close {
+    float: right;
+    background-color: rgb(226, 226, 226);
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+.none {
+    display: none;
+}
+.loading {
+    display:none;
+}
+.status {
+    color: #a7b0c0;
+    font-size: 12px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+}
+
+.menu {
+    width: 100%;
+    height: 50px;
+    text-align: left;
+}

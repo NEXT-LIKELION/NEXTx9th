@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block css %}{% load static %}
+<link rel="stylesheet" href="{% static '3_board/new.css' %}">
+
+{% endblock %}
+{% block container %}
+<form method="POST">
+  {% csrf_token %}
+  <input id="title" type="text" name="title" value="{{ post.title }}" placeholder="제목을 입력해주세요">
+  <input id="content" type="text" name="content" value="{{ post.content }}" placeholder="내용을 입력해주세요">
+  <button id="submit" type="submit">수정하기</button>
+</form>
+{% endblock container %}

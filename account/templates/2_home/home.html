@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '2_home/home.css' %}?v=2">
+{% endblock css %}
+
+{% block container %}
+<div class="header">
+    <h1 style="display:flex; margin-top:35px; margin-left:30px; font-family: 'Spoqa Han Sans Neo', 'sans-serif'; ">코독한 시간표</h1>
+    <div id="bbBtn">
+            <i class="fas fa-plus fa-2x"></i>
+    </div>
+</div>
+
+{% if plrs %}
+<div class="table">
+    <div class="row">
+        <div class="cross">.</div>
+        {% for class in classes %}
+            <div class="time">{{class}}교시</div>
+        {% endfor %}
+    </div>
+    {% for day in days %}
+        <div class="row">
+            <div class="day">{{day}}</div>
+            {% for class in classes %}
+                <div class="col">
+                    {% for classList in classLists %}
+                        {% if day == classList.day and class in classList.class %}
+                            <div class="color myBtn" value="{{ classList.subnum }}">
+                                <div class="study">{{ classList.subject }}</div>
+                                <div>{{ classList.professor }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor%}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+<div class="nontable">
+    {% for classList in nontable %}
+        <div class="non">
+            <div class="txt">{{ classList.subject }} | {{ classList.professor }}</div></div>
+    {% endfor %}
+</div>
+<div class="semester">{{nickname}}님의 2021.1학기 시간표입니다.</div>
+{% else %}
+<div class="center">
+    <div class="icon">
+        <img src="{% static 'img/남.svg' %}" alt="">
+        <img src="{% static 'img/여.svg' %}" alt="">
+    </div>
+    <div class="big">내 시간표 등록하기</div>
+    <div class="small">우측 상단 플러스 버튼을 눌러서<br>자동으로 나의 시간표를 등록하고<br>독강메이트를 찾아보세요 :)</div>
+</div>
+{% endif %}
+
+
+
+
+
+<div id="bbModal" class="modal">
+    <div class="bbModal-content">
+        <form action="{% url 'bblogin' %}" method="POST">
+            {% csrf_token %}
+            <div><strong>블랙보드로 시간표 가져오기</strong></div>
+            <br>
+            <div class="status">블랙보드로 로그인하면 <br>자동으로 시간표 등록!</div>
+            <br>
+            <input class="bbid" type="text" name="bbid" required placeholder="블랙보드 아이디">
+            <br>
+            <input class="bbpw" type="password" name="bbpassword" required placeholder="블랙보드 비밀번호">
+            <br>
+            <i class="fas fa-spinner fa-spin fa-fw loading fa-4x"></i>
+            <button type="submit" class="submit" >확인</button>
+            <br>
+        </form>
+        <button class="cancel">취소하기</button>
+    </div>
+</div>
+
+<!-- <button class="myBtn">메뉴 띄우기</button> -->
+
+<div id="myModal" class="modal">
+    <div class="myModal-content">
+        <span class="close" style="color: rgb(0, 0, 0); font-size: 20px;">&times;</span>
+        <h2 style="margin: 50px 0 30px 0;">새로운 친구를 찾으러가요!</h2>
+        <a class="myModal-menu1"><div class="menu">강의 코독친구 탐색</div></a>
+        <a class="myModal-menu2"><div class="menu">수업 익명 커뮤니티</div></a>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static '2_home/home.js' %}?v=2"></script>
+
+{% endblock container %}

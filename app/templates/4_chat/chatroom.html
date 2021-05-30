@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '4_chat/chatroom.css' %}">
+{% endblock css %}
+
+{% block container %}
+<div id="room-top">
+    <a href="{% url 'home' %}">
+        <div class="back">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </a>
+    {% if friend.photo %}
+    <img class="profile-img" src="{{ friend.photo.url }}">
+    {% else %}
+    <img class="profile-img" src="{% static 'img/default_photo.png' %}">
+    {% endif %}
+    <div class="friend-name">{{ friend.nickname }}</div>
+</div>
+<div id="room-body">
+    {% for chat in chats %}
+    <!-- 채팅 내용 -->
+    {% if chat.pfrom == request.user.profile %}
+    <div class="go">
+        <div class="time">{{ chat.created_at }}</div>
+        <div class="chat chat-send">
+            {% if chat.read == False %}
+            <div class="read"><div>1</div></div>
+            {% endif %}
+            <p class="message">
+                {{ chat.content }}
+            </p>
+        </div>
+    </div>
+    
+    {% else %}
+    <div class="come">
+        <div class="chat chat-recieve">
+            <p class="message">
+                {{ chat.content }}
+            </p>
+        </div>
+        <div class="time">{{ chat.created_at }}</div>
+    </div>
+    {% endif %}
+    <!--  -->
+    {% endfor %}
+</div>
+<div id="room-foot">
+    <div id="chat-input">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="content" required placeholder="친구에게 chat을 보내세요.">
+            <button type="submit" style="font-size: 19px; color: white;">></button>
+        </form>
+    </div>
+</div>
+{% endblock container %}

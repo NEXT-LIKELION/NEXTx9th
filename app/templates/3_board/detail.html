@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block css %}{% load static %}
+<link rel="stylesheet" href="{% static '3_board/detail.css' %}?v=2">
+{% endblock %}
+
+{% block container %}
+<div class="header">
+  <a  href="{% url 'board' lecture_pk %}"><div class="back"><i class="fas fa-arrow-left"></i></div></a>
+  {% if user.is_authenticated and post.author.pk == user.pk %}
+  <a href="{% url 'delete' lecture_pk post.pk %}">삭제하기</a>
+  {% endif %}
+</div>
+<div class="profile">
+  <img class="profile-img" src="{% static 'img/default_photo.png' %}">
+  <div class="unknown">익명</div>
+</div>
+<div class="container-post-container">
+  <div id="title">{{ post.title }}</div>
+  
+  <div id="content">{{ post.content }}</div>
+</div>
+
+
+
+{% for comment in post.comments.all %}
+<div class="comment">
+  <div class="comment-main">
+      <img class="comment-profile-img" src="{% static 'img/default_photo.png' %}">
+    <div class="comment-wrapper">
+      <div class="unknown">익명</div>
+      <div class="comment-content">{{ comment.content }}</div>
+    </div>
+    
+  </div>
+  {% if user.is_authenticated and comment.author.pk == user.pk %}
+    <a  href="{% url 'delete_comment' lecture_pk post.pk comment.pk %}"><div class="delete_comment">삭제</div></a>
+    {% endif %}
+</div>
+{% endfor %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {% if user.is_authenticated %}
+  <div class="comment_input">
+    <input type="text" name="content" placeholder="댓글을 입력하세요">
+    <button type="submit"><i class="fas fa-arrow-up"></i></button>
+  </div>
+
+  {% else %}
+  <span>댓글을 작성하려면 로그인하세요.</span>
+  {% endif %}
+</form>
+
+{% endblock container %}

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '0_registration/reset.css' %}">
+    <link rel="stylesheet" href="{% static '0_registration/welcome.css' %}">
+    <title>코독 | codok</title>
+</head>
+<body>
+    <section>
+        <div class = "content">
+            <div class = "about">
+                <div>
+                    <span class="codok">Codok</span>
+                    <img src="{% static './src/image 483.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="welcome">
+                <div id="userInfo">
+                    <span id="codokId">{{ request.user.username }}</span><span>님 !</span>
+                </div>
+                <div class="welcome-description">
+                    회원가입 대단히 감사합니다.
+                </div>
+            </div>
+            <div class = "use">
+                <div class="useCodok">
+                    <a href="{% url 'profile' %}"><div class="use-text">코독 이용하기</div></a>
+                </div>
+                <div class="invite">
+                    <a href=""><div class="invite-text">코독에 친구 초대하기</div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+</html>

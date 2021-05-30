@@ -1,0 +1,125 @@
+/* 환영페이지 */
+
+section {
+    min-height: 100vh;
+    width:435px;
+    margin: 0 auto;
+    
+}
+
+.content {
+
+    margin : 0 auto;
+    max-width : 70%;
+    padding-top : 250px;
+    
+
+    
+}
+
+
+.about {
+    text-align: center;
+}
+
+.codok {
+    text-align: center;
+    font-family: SpoqaHanSansNeo;
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    color: black;;
+    line-height: 0.63;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+.welcome {
+    margin: 0 auto;
+    text-align: center;
+    font-family: "NotoSans";
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    margin-top : 10%;
+    margin-bottom : 10%;
+}
+
+
+
+#codokId {
+    font-weight: 300;
+}
+
+.use .useCodok {
+    width: 266px;
+    height: 56px;
+    border-radius: 60px;
+    text-align: center;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #18a0fb;
+}
+
+.use-text {
+    font-family: "SpoqaHanSansNeo";
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    text-align: center;
+    color: #ffffff;
+}
+
+.invite-text {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+    text-align: center;
+    letter-spacing: -0.005em;
+
+    color: #12121D;
+}
+
+.invite-text {
+  font-family: "SpoqaHanSansNeo";
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  color: #18a0fb;
+}
+.use .invite {
+    width: 266px;
+    height: 56px;
+    background: #dbedff;
+    border-radius: 60px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+    border : 1px solid #007fff;
+    
+}
+
+
+

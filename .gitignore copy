@@ -1,0 +1,3 @@
+account/migrations
+app/migrations
+db.sqlite3

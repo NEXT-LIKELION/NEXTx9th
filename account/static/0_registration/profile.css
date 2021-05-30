@@ -1,0 +1,182 @@
+
+
+#profileForm {
+    min-height: 100vh;
+    width:435px;
+    margin: 0 auto;
+    padding: 5%;
+    
+}
+
+.input {
+    width: 286px;
+    height: 40px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: solid 1px #e1e3e6;
+    background-color: #ffffff;
+}
+
+.makeProfile{
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    /* identical to box height, or 114% */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.005em;
+
+    color: #222222;
+}
+
+.profileImage {
+    text-align: center;
+    margin-bottom : 60px;
+    margin-top : 60px;
+}
+.profileImage .wrapper {
+    margin: 0 auto;
+}
+.profileImage .wrapper img {
+    width: 124px;
+    height: auto; 
+}
+
+.profileImage-text {
+    font-family: "SpoqaHanSansNeo";
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: -0.05px;
+    text-align: center;
+    color: #3897f0;
+}
+
+.profile-text {
+    font-family: "SpoqaHanSansNeo";
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #404d61;
+    margin-bottom: 12px;
+}
+
+.major {
+    display: flex;
+    align-items: center;
+    margin-bottom : 12px;
+}
+
+.studentId {
+    display:flex;
+    margin-bottom : 12px;
+}
+
+.nickname {
+    margin-bottom : 12px;
+}
+.radio {
+    display: flex;
+    margin-right: 42px;
+}
+.gender {
+    display : flex;
+}
+input[type="text"] {
+    margin-right: 10px;
+    
+}
+input[type="radio"] {
+    width : 24px;
+    height: 24px;
+    margin-right : 10px;
+}
+
+label{
+    flex-grow: 0;
+    font-family: "DMSans";
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5a6474;
+}
+.labelWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.form-text {
+    font-family: "SpoqaHanSansNeo";
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #404d61;
+    margin-bottom: 14px;
+    margin-top : 14px;
+}
+
+.profileText {
+    width: 90%;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.check {
+    margin-top : 14px;
+}
+
+.submitButton {
+    width: 160px;
+    height: 56px;
+    border-radius: 60px;
+    background-color: #12121d;
+    color : #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top : 25px;
+    cursor: pointer;
+}
+
+.buttonText {
+    margin : 0 auto;
+    font-family: "SpoqaHanSansNeo";
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.08px;
+    text-align: center;
+    color: #ffffff;
+    text-align: center;
+}
+button {
+    text-align: center;
+}
+
+
+

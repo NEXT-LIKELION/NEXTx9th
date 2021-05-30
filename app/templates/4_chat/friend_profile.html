@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '4_chat/friend_profile.css' %}">
+{% endblock css %}
+
+{% block container %}
+
+<div class="header">
+    <div id="back">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="talk_button">
+        <a style="color: white;" href="{% url 'makeroom' friend.pk %}" >
+        talk하기
+        </a>
+    </div>
+</div>
+
+<div class="profile_box">
+    <img class="prof_img" src="{% static 'img/default_photo.png' %}">
+    <div class="profile">
+
+        <h1 style="font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+            font-size: 18px;">{{ friend.nickname }}</h1>
+        <div id="info">
+            {% if friend.studentid_open is True %}
+            <span class="smallprofiletext">비공개입니다.</span>
+            {% else %}
+            <span class="smallprofiletext">{{friend.major}}</span>
+            {% endif %}
+
+            {% if friend.studentid_open is True %}
+            <span class="smallprofiletext">비공개입니다.</span>
+            {% else %}
+            <span class="smallprofiletext">{{ friend.studentid }}</span>
+            {% endif %}
+            <span class="smallprofiletext">{{ friend.gender }}}</span>
+
+            {% if friend.matewant is True %}
+            <img id="hand" src="{% static 'img/hand.svg' %}">
+            {% endif %}
+
+        </div>
+        <span id="smallinfo">{{ friend.introduce }}</span>
+    </div>
+</div>
+<h2> 친구의 시간표</h2>
+<div class="box">
+
+    <div class="boxlist">
+        {% for plr in plrs %}
+        <span class="name">{{ plr.lecture.subject }}</span>
+        <span class="balance">{{ plr.lecture.professor }}</span>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock container %}

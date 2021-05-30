@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '0_registration/reset.css' %}">
+    <link rel="stylesheet" href="{% static '1_mypage/profile_edit.css' %}">
+    <title>코독 | codok</title>
+</head>
+<body>
+    <form id = "profileForm" method="POST">
+        {% csrf_token %}
+        <header>
+            <div class="makeProfile">프로필 수정하기</div>
+        </header>
+        
+        <div class="profileImage">
+            <div class ="wrapper">
+                <img src="{% static 'img/profile.png' %}" alt="">
+            </div>
+            <div class ="profileImage-text">
+                Change Profile Photo
+            </div>
+            <input type="file" value="{{ profile.photo }}" name="photo">
+        </div>
+        
+        <div class="profile-text">profile</div>
+        <div class="information">
+            <div class="major">
+                <input required class="input" type="text" value="  {{profile.major}}" name ="major">
+                <span class="radio">
+                    <div class="labelWrapper">
+                        <input type="checkbox" value="hide" name="major-hide">
+
+                    </div>
+                    <div class="labelWrapper">
+                        <label for="hide">비공개</label>
+                    </div>
+                </span>
+                
+            </div>
+            <div class="studentId">
+                <input required class="input" type="text" value="  {{profile.studentid}}" name="studentId">
+                <span class="radio">
+                    <div class="labelWrapper">
+                        <input type="checkbox" value="hide" name="studentId-hide">
+
+                    </div>
+                    <div class="labelWrapper">
+                        <label for="hide">비공개</label>
+                    </div>
+                    
+                </span>
+
+            </div>
+            <div class="nickname">
+                <input class="input" type="text" value="  {{profile.nickname}}" name="nickname">
+            </div>
+
+
+
+            <div class="form-text">성별을 선택해주세요.</div>
+            <div class="gender">
+                <span class="radio">
+                    <div class="labelWrapper">
+                        <input type="radio" value="male" name="gender">
+
+                    </div>
+                    <div class="labelWrapper">
+                        <label for="male">남</label>
+                    </div>
+                </span>
+                <span class="radio">
+                    <div class="labelWrapper">
+                        <input type="radio" value="female" name="gender">
+
+                    </div>
+                    <div class="labelWrapper">
+                        <label for="female">여</label>
+                    </div>
+                </span>
+                <span class="radio">
+                    <div class="labelWrapper">
+                        <input type="radio" value="none" name="gender" checked>
+
+                    </div>
+                    <div class="labelWrapper">
+                        <label for="none">선택안함</label>
+                    </div>
+                </span>
+            </div>
+            <div class="form-text">소개를 적어주세요.</div>
+            <textarea required class="profileText" name="description" id="" cols="30" rows="10">{{profile.introduce}}</textarea>
+            <div class="check">
+                <span class="radio">
+                    <div class="labelWrapper">
+                        <input type="checkbox" value="matewant" name="matewant">
+                         <label for="none"></label>
+                    </div>
+                    <div class="labelWrapper">
+                        <label for="none">독강 메이트 찾고싶어요 ~<img src="{% static 'img/image 301.png' %}" alt="" style="width:24px; height:24px;"></label>
+                    </div>
+                </span>
+            </div>
+            
+        </div>
+
+            <button type="submit" class="submitButton"><div class="buttonText">확인</div>
+                </button>
+        
+        
+
+    </form>
+    
+    
+</body>
+</html>

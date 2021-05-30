@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block css %}{% load static %}
+<link rel="stylesheet" href="{% static '3_board/board.css' %}?v=2">
+{% endblock css %}
+
+{% block container %}
+<div class="header">
+  <h1 id="subject">{{ lecture.subject }}</h1>
+  <div id="prof">{{ lecture.professor }}</div>
+</div>
+<div class="notice">수업 관련 공지 / 필기공유 방</div>
+<a href="http://google.com">
+<div class="search">
+  <i class="fas fa-search"></i> 정보를 검색하세요
+</div>
+</a>
+{% for post in posts %}
+
+<div class="wrapper">
+  <a class="container-items" href="{% url 'detail' lecture.pk post.pk %}">
+    <div id="title">{{ post.title }}</div>
+  </a>
+  <a class="container-items" href="{% url 'detail' lecture.pk post.pk %}">
+    <div id="content">{{ post.content }}</div>
+  </a>
+  <div id="info_auth">{{ post.author }}</div>
+</div>
+
+
+
+{% endfor %}
+
+
+<div class="temp" >
+  <a class="write" href="{% url 'new' lecture.pk %}">
+    <div id="write">
+      <i class="fas fa-plus fa-2x"></i>
+    </div>
+  </a>
+</div>
+{% endblock container %}

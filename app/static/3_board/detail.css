@@ -1,0 +1,165 @@
+.container-post-container {
+    margin-top: 10px;
+    margin-left: 25px;
+
+    
+    border-bottom: 1px solid #aaa;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.back {
+    display: flex;
+    border-radius: 40px;
+    width: 33px;
+    height: 33px;
+    padding: 10px;
+    background-color: #f8fafd;
+    justify-content: center;
+    align-items: center;
+}
+.header > a {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    margin-top: 17px;
+    margin-right: 21px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    color: #a7b0c0;
+}
+#title {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+}
+
+#content {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    margin-bottom: 20px;;
+}
+
+.unknown {
+    display:flex;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    margin-left: 6px;
+    color: #000000;
+}
+.profile {
+    display:flex;
+    margin-top: 14px;
+    margin-bottom:14px;
+    margin-left: 25px;
+}
+
+.profile-img {
+    
+    display:flex;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 10px;
+    /* vertical-align: */
+}
+
+.comment{
+    display:flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.comment-main{
+    display:flex;
+
+}
+.comment-profile-img {
+    display:flex;
+    height: 44px;
+    width: 44px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 10px;
+}
+.comment-content {
+    display:flex;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+}
+
+.delete_comment {
+    display: flex;
+    margin-right: 21px;
+    font-size: 13px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    color: #a7b0c0;
+}
+
+.comment_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    height: 60px;
+    margin: 87px 18px 20px 17px;
+    padding: 8px 11px 8px 27px;
+    border-radius: 36px;
+    box-shadow: 0 2px 28px 0 rgba(75, 88, 208, 0.15);
+    border: solid 1px #f5f5f5;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 90px;
+}
+
+.comment_input > input {
+    display: flex;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    background:url('input_bg.jpg') no-repeat;
+    padding:15px;
+    border:0;
+    width:275px;
+    color:#373d39;
+}
+
+.comment_input > button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    flex-grow: 0;
+    margin: 0 0 0 55px;
+    padding: 12.9px 15.5px 12.9px 15.5px;
+    background-color: #18a0fb;
+    border-style: none;
+    border-radius:40px;
+    color: white;
+
+}
+
+.comment_input > button:hover {
+    background-color: #a7b0c0;
+}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block container %}
+<h1 style="margin-top: 100px;">코독한 시간표</h1>
+
+{% if error %}
+<div>{{ error }}</div>
+{% endif %}
+
+<a href="{% url 'home' %}">홈으로</a>
+
+{% endblock container %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block css %}{% load static %}
+<link rel="stylesheet" href="{% static '3_board/new.css' %}">
+
+{% endblock %}
+{% block container %}
+<div class="header">
+  <a href="{% url 'board' lecture_pk %}"><i style="margin-top:10px; margin-left:20px;"class="fas fa-arrow-left"></i></a>
+  <span style="font-size:16px; font-family:'Spoqa Han Sans Neo', 'sans-serif'; ">글 작성</span> 
+  <div style="width:20px; height:20px;"></div>
+</div>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="content_container">
+      <input id="title" type="text" name="title" placeholder="제목을 입력해주세요">
+    </div>
+    <div class="content_container2">
+      <input id="content" type="text" name="content" placeholder="내용을 입력해주세요">
+    </div>
+    <button id="submit" type="submit">업로드</button>
+  </form>
+{% endblock container %}

@@ -1,0 +1,134 @@
+/* 홈페이지 */
+
+#video {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+section {
+    min-height: 100vh;
+    width:435px;
+    margin: 0 auto;
+    
+}
+
+.content {
+
+    margin : 0 auto;
+    max-width : 70%;
+    padding-top : 250px;
+    
+
+    
+}
+
+#video {
+    position: absolute;
+    display:block;
+    width: 435px;
+    min-width: 400px;
+    left: auto;
+
+}
+
+.about {
+    text-align: center;
+}
+
+.about .description {
+    font-family: "SpoqaHanSansNeo";
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffffff;
+    
+}
+.codok {
+    text-align: center;
+    font-family: "SpoqaHanSansNeo";
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    color: #ffffff;
+    line-height: 0.63;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+.sign {
+    margin-top:10%;
+}
+
+.sign .login {
+    width: 266px;
+    height: 56px;
+    background: #F8FAFD;
+    border-radius: 60px;
+    text-align: center;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-text {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+    text-align: center;
+    letter-spacing: -0.005em;
+
+    color: #12121D;
+}
+
+.login-text {
+    font-family: "Spoqa Han Sans Neo";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+    text-align: center;
+    letter-spacing: -0.005em;
+
+    color: #12121D;
+}
+
+.sign-text {
+    color: #ffffff;
+}
+.sign .signIn {
+    width: 266px;
+    height: 56px;
+    background: rgba(34, 34, 34, 0.5);
+    border-radius: 60px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+        <script src="https://kit.fontawesome.com/be589f1f63.js" crossorigin="anonymous"></script>
+        {% block css %}
+
+        {% endblock css %}
+        <title>Codok</title>
+    </head>
+    <body>
+        <div class="wrap">
+   
+            
+            <div class="container">
+                {% block container %}
+
+                {% endblock container %}
+            </div>
+            
+            <div class="footer">
+                <div class="footer-items">
+                    <a href="{% url 'home' %}">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+
+                    </a>
+                    
+                </div>
+                <div class="footer-items">
+                    <a href="{% url 'logout' %}">
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>   
+                    </a>
+                   
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

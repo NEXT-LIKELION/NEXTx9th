@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%load static%}
+{% block css %}
+
+<link rel="stylesheet" href="{% static '0_registration/login.css' %}">
+{% endblock css %}
+
+{% block container %}
+<div class="header">
+    <div id="back">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <a target="_blank" href="https://open.kakao.com/o/sVADQXfd" id="kakao"> 문의하기 </a>
+</div>
+<h1>로그인</h1>
+<span class="explain1">코독을 이용해주셔서 감사합니다 <br>회원님의 고독하지 않은 대학생활을 응원해요 :)</span>
+{% if error %}
+<div style="color:red;">{{ error }}</div>
+{% endif %}
+<form id="login" action="" method="POST">
+    {% csrf_token %}
+    <div class="login_container">
+        <i class="far fa-user"></i>
+        <input id="id" type="text" name="username" required placeholder="아이디">
+    </div>
+    <div class="login_container">
+        <i class="fas fa-lock"></i>
+        <input id="pw" type="password" name="password" required placeholder="비밀번호">
+    </div>
+    <a id="forget" target="_blank" href="https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=%EA%B8%B0%EC%96%B5%EB%A0%A5+%EC%A2%8B%EC%95%84%EC%A7%80%EB%8A%94+%EC%9D%8C%EC%8B%9D">잊어버리셨나요?</a>
+    
+    <button id="submit" type="submit">확인</button>
+</form >
+
+{% endblock container %}
