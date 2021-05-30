@@ -1,0 +1,182 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+* {
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.whole_wrapper {
+    padding: 98px 128px 162px 112px;
+
+    width: 1440px;
+    margin-bottom: 50px;
+}
+
+.title_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+    font-size: 35px;
+    line-height: 41px;
+    width: 1280px;
+}
+
+.property_catetgory {
+    margin-left: 20px;
+    width: 100px;
+    height:50px;
+    color: white;
+    border: 1px solid white ;
+    background-color: #000000;
+    padding-left: 15px;
+    font: 20px;
+    border-radius: 10px;
+
+}
+
+.main_title {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 35px;
+    width: 306px;
+    height: 44px;
+    margin-left: -10px;
+}
+
+.property_box {
+    display: flex;
+    margin-bottom: 71.5px;
+}
+
+.property {
+    margin-right: 10px;
+}
+
+hr {
+    /* margin-left: 78px;
+    margin-right: 82px; */
+    width: 1280px;
+    height: 0px;
+    border: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
+    margin-bottom: 70px;
+}
+
+
+.content_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.content_box {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-top: 15px;
+    background-color: #000000;
+    color: white;
+    margin-bottom: 15px;
+    display: flex;
+    padding: 10px;
+    height: 190px;
+}
+
+.image_box {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+    height: 170px;
+    width: 300px;
+    background-image: url("https://cdn.pixabay.com/photo/2020/04/06/13/37/coffee-5009730_960_720.png");
+    background-size: contain;
+    background-position: center;
+}
+
+.detail_box_wrapper {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.detail_box1 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_box1 a
+{
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+}
+
+.detail_box2 {
+    font-size: 20px;
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_box3 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_title {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_category {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_intro {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_review {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_total {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_price {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+
+.new_post
+{
+    display: flex;
+    margin-top: 5px;
+    width: 100px;
+    height:50px;
+    margin-left:30px;
+    border: 1px solid white;
+    padding-left: 18px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+.new_post a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 15px;
+}

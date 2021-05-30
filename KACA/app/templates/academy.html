@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'academy.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="academy_page">
+    <div class='academy_intro'>
+        <div class='academy_content'>
+            {% if post.logo %}
+            <img src='{{post.logo.url}}'>
+            {% endif %}
+            <div class="academy_info">
+                <div class='academy_description'></div>
+                <div class='academy_profile'></div>
+                <div class='academy_title'>{{post.title}} </div>
+                <div class='academy_sorting'>분류: {{post.category}}</div>
+                <div class='short_description'>한줄 설명: {{post.introduction}}</div>
+                <div class='applicant'>모집대상: {{post.target}}</div>
+                <div class='apply_start'>시작일: {{post.apply_start}}</div>
+                <div class='apply_end'>마감기간: {{post.apply_end}}</div>
+            </div>
+            <div class='academy_pic'>
+            </div>
+
+
+        </div>
+    </div>
+    <hr width="1231px">
+    <div class="aca-intro">학회소개</div>
+
+    <div class='academy_post_box'>
+        {% if post.logo %}
+        <img class="aca-logo" src='{{post.logo.url}}'>
+        {% endif %}
+        <div class="aca-intro2">
+            <div class='academy_post_text'>{{post.content}} </div>
+            <div class='academy_post_title'>{{post.title}}</div>
+        </div>
+        <div class='academy_post'></div>
+        <div class='academy_post_pic'></div>
+    </div>
+    <div class='academy_post_modify'>
+        <div class='academy_post_change'><a href="{% url 'academy_edit' post.pk %}">수정</a></div>
+        <div class='academy_post_delete'><a href="{% url 'academy_delete' post.pk %}">삭제</a></div>
+        <button class="scrap-button" onclick="scrap()">스크랩하기</button>
+    </div>
+
+
+    <div class='academy_comment_box'>
+        <div class='academy_comment_title'>댓글</div>
+
+        <div class='comment_box'>
+            {% if user.is_authenticated %}
+            <div class='form'>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input class="comment" type="text" name="content" placeholder="댓글을 입력해주세요"></input>
+                    <button class="commen_btn" type="submit">댓글 쓰기</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+
+        {% for post_comment in post.post_comments.all %}
+        <div class='academy_comment'>
+            <div class='academy_comment_username'>{{user.username}}</div>
+            <div class='academy_comment_content'>{{ post_comment.content }}</div>
+            {% if user.is_authenticated and post_comment.author.pk == user.pk %}
+            <div class='academy_comment_delete'><a
+                    href="{% url 'delete_academy_comment' post.pk post_comment.pk %}">삭제</a></div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script type="text/javascript">
+    const scrapButton = document.querySelector('#scrap-button')
+
+    const scrap = () => {
+        fetch('/scrap/', {
+            method: "POST",
+            body: JSON.stringify({ post_pk: "{{ post.pk }}" })
+        })
+            .then(response => response.json())
+            .then(res => {
+                if (res.scrap_count > 0) {
+                    scrapButton.style.color = 'red'
+                    scrapButton.textContent = "스크랩 취소"
+                }
+                else {
+                    scrapButton.style.color = 'blue'
+                    scrapButton.textContent = "스크랩하기"
+                }
+            })
+            .catch(error => console.error(error))
+    }
+</script>
+
+{% endblock %}

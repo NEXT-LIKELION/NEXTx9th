@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lecture_form.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="lecture_form">
+    <form action='' method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+    <div>
+        <div class='lecture_name'>학회명</div>
+        <input type='text' id ='title' name='title' placeholder="학회명을 입력해주세요">
+    </div>
+    <br>
+    <div>
+        <div class='short_intro'>한줄소개</div>
+        <input type='text' id ='introduction' name='introduction' placeholder="깔끔한 한줄소개!">
+    </div>
+    <br>
+    <div>
+        <div>
+            <div class='lecture_price'>강의가격</div>
+            <input type='text' id ='price' name='price' placeholder="강의가격">
+        </div>
+        <br>
+        <div>
+            <div class='lecture_length'>강의구성</div>
+            <input type='text' id ='construct' name='construct' placeholder="ex)각 2h, 5강좌">
+        </div>
+        <br>
+    </div>
+    <div>
+        <div class='lecture_category'>학회분류</div>
+        <div class='category_form'>
+            <select class="interest" id='category' name='category'>
+                <option value="business">경영</option>
+                <option value="economics">경제</option>
+                <option value="humanities">인문</option>
+                <option value="law">법</option>
+                <option value="coding">코딩</option>
+                <option value="lifescience">생명과학</option>
+                <option value="environenginner">환경공학</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <div class='lecture_img'>강좌이미지</div>
+        <input type='file' id ='thumbnail' name='thumbnail' accept="image/png, image/jpeg" >
+    </div>
+    <br>
+    <div>
+        <div class='lecture_description'>강좌소개글</div>
+        <input type='text' id ='content' name='content' placeholder="강좌 소개를 해주세요">
+    </div>
+    <br>
+    <div class= 'submission'>
+        <button type='submit'>제출하기</button>
+    </div>
+    <br>
+    </form>
+</div>
+
+{% endblock %}

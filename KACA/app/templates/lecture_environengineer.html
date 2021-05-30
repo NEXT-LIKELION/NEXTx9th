@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lecture_environengineer.css' %}" />
+{% endblock css %} {% block content %}
+    <div class="content_wrapper">
+        {% for lecture in lectures %}
+        <div class="content_box">
+            <div class="image_box">
+                {% if lecture.thumbnail %}
+                    <img src ='{{lecture.thumbnail.url}}'>
+                {% endif %}
+               
+            </div>
+            <div class="detail_box_wrapper">
+                <div class="detail_box1">
+                    <div class="detail_title">
+                        <a href="{% url 'lecture_detail' lecture.pk %}">{{lecture.title}}</a>
+                    </div>
+                    <div class="detail_category">
+                        <p>{{lecture.category}}</p>
+                    </div>
+                </div>
+
+                <div class="detail_box2">
+                    <div class="detail_intro">
+                        <p>{{lecture.introduction}}</p>
+                    </div>
+                </div>
+
+                <div class="detail_box3">
+                    <div class="detail_total">{{lecture.construct}}</div>
+                    <div class="detail_price">{{lecture.price}}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}   
+    </div>
+
+
+    {% endblock %}

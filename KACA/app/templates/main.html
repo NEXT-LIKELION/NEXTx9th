@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class = "container1">
+    <p class = "p-1">찾았다, 내 인생 학회</p>
+    <img class = "big" src = "{%static 'base_img/white letters.svg' %}">
+    <p class = "p-2">복잡한 학회 정보들을 한 번에 정리해 줄</p>
+    <p class = "p-3">단 하나의 플랫폼</p>
+</div>
+<div class = "container2">
+    <div class = "finder-box">
+        <input class = "enter" type = "text" placeholder="검색어를 입력해주세요">
+        <button class="button">검색</button>
+    </div>    
+</div>
+<div class = "line"></div>
+
+
+<div class = "container3">
+    <div class= "academy-header">
+        <p class="title1">On Recruit 학회</p>  
+        <p class = "all"><a href = "{% url 'category' %}">전체보기</a></p>
+    </div>
+    <div class = "academy-content">
+        {% for post in posts %}
+        
+        {% if forloop.counter < 5 %}
+        <div class = "content-set">
+            <div class = "box">  
+            {% if post.logo %}
+                <img src ='{{post.logo.url}}'>
+            {% endif %}       
+            </div>  
+            <a href="{% url 'academy' post.pk %}">
+                {{post.title}}</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+</div>
+
+
+<div class = "container4">
+    <div class= "lecture-header">
+        <p class = "title1">Open Lecture</p>
+        <p class = "all"><a href = "{% url 'lecture_main' %}">전체보기</a></p>
+    </div>
+    <div class = "lecture-content">
+        {% for lecture in lectures %}
+        
+        {% if forloop.counter < 5 %}
+     
+        <div class = "content-set">
+            <div class = "box">
+            {% if lecture.thumbnail %}
+                <img src ='{{lecture.thumbnail.url}}'>
+            {% endif %} 
+            </div>
+            <a href="{% url 'lecture_detail' lecture.pk %}">
+                {{lecture.title}}</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% endblock %}

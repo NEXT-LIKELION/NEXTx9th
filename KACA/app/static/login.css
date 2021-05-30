@@ -1,0 +1,45 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+* {
+    font-family: spoqa-han-sans;
+}
+
+.body {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+input {
+    width: 517px;
+    height: 57px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.id {
+    margin-bottom: 30px;
+}
+
+.login_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    width: 509px;
+    height: 57px;
+    background-color: chocolate;
+    color: white;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 89px;
+    margin-bottom: 141px;
+}

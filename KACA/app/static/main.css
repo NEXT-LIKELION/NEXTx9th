@@ -1,0 +1,119 @@
+.big {
+  width: 60%;
+  opacity: 0.15;
+  z-index: 1;
+  margin-top: -140px;
+  margin-left: 300px;
+}
+
+.container1 p {
+  z-index: 2;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.p-1 {
+  margin-left: 200px;
+  margin-top: 150px;
+}
+.p-2 {
+  margin-top: -85px;
+  margin-left: 350px;
+}
+.p-3 {
+  margin-top: -80px;
+  margin-left: 905px;
+}
+.container2 {
+  position: relative;
+  margin-top: 250px;
+  margin-left: 300px;
+}
+
+.enter {
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  width: 900px;
+  height: 50px;
+  text-align: center;
+}
+.button {
+  border-radius: 20px;
+  border: 2px solid white;
+  margin-left: 10px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  width: 70px;
+}
+
+.line {
+  margin-top: 300px;
+  margin-left: 150px;
+  width: 1200px;
+  border-bottom: 2px solid white;
+}
+
+.container3 {
+  margin-top: 200px;
+  margin-left: 100px;
+}
+.container3 a {
+  font-size: 20px;
+  text-decoration: none;
+  color: darkgray;
+}
+.academy-header {
+  display: flex;
+  flex-direction: row;
+}
+.lecture-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.title1 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.all {
+  margin-top: 40px;
+  margin-left: 950px;
+}
+.box img {
+  border-radius: 10px;
+  width: 230px;
+  height: 250px;
+  background-color: darkgray;
+  border: 0.5px solid rgb(165, 165, 165);
+}
+
+.academy-content {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1200px;
+}
+.academy-content p {
+  margin-top: 5px;
+}
+
+.container4 {
+  margin-top: 170px;
+  margin-bottom: 160px;
+}
+
+.lecture-content {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1200px;
+}
+.lecture-content p {
+  margin-top: 5px;
+}

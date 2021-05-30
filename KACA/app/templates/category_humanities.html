@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'category_humanities.css' %}" />
+
+{% endblock css %} {% block content %}
+<div class="academy_list">
+    {% for post in posts %}
+    <div class="academy_content">
+      <div class="academy_pic">
+        {% if post.logo %}
+        <img src="{{post.logo.url}}" />
+        {% endif %}
+      </div>
+      <div class="academy_description">
+        <div class="academy_profile">
+          <div class="academy_title">
+            <a href="{% url 'academy' post.pk %}"> {{post.title}} </a>
+          </div>
+          <div class="academy_sorting">{{post.category}}</div>
+        </div>
+        <div class="short_description">{{post.content}}</div>
+        <div class="applicant">{{post.target}}</div>
+        <div class="apply_start">{{post.apply_start}}</div>
+        <div class="apply_end">{{post.apply_end}}</div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

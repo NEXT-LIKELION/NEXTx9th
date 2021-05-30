@@ -1,0 +1,117 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+* {
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.whole_wrapper {
+    padding: 50px;
+}
+
+.title_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    border-bottom: solid #FFFFFF 2px;
+    margin-bottom: 70px;
+}
+
+.title_wrapper p {
+    font-size: 35px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.property_box {
+    display: flex;
+}
+
+.property {
+    margin-right: 10px;
+}
+
+
+
+.content_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.content_box {
+    background-color: #FFFFFF;
+    color: #000000;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+}
+
+.image_box {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+    height: 170px;
+    width: 300px;
+    
+    background-size: contain;
+    background-position: center;
+}
+
+.detail_box_wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.detail_box1 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_box2 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_box3 {
+    display: flex;
+    padding: 5px;
+    height: 33%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail_title {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_category {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_intro {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_review {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_total {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}
+.detail_price {
+    border-radius: 5px;
+    border: 1px #000000 solid;
+}

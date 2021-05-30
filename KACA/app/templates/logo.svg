@@ -1,0 +1,40 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 136.85106 68.93617">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 40px;
+        font-family: Helvetica-CondensedBlack;
+        font-weight: 800;
+      }
+
+      .cls-1, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #040000;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(-228.70213 -386.42553)">
+      <text class="cls-1" transform="translate(253.7836 434.85107)">KACA</text>
+    </clipPath>
+  </defs>
+  <title>Untitled-2</title>
+  <g class="cls-2">
+    <rect class="cls-3" width="136.85106" height="68.93617"/>
+    <rect class="cls-4" x="256.16479" y="402.99194" width="4.53794" height="15.40423" transform="translate(137.39592 -448.87629) rotate(45)"/>
+    <rect class="cls-4" x="289.35628" y="422.86428" width="4.53794" height="15.40423" transform="translate(161.16935 -466.52575) rotate(45)"/>
+    <rect class="cls-4" x="335.27117" y="421.71535" width="4.53794" height="15.40423" transform="translate(173.80509 -499.329) rotate(45)"/>
+    <rect class="cls-4" x="314.56905" y="406.90684" width="4.53794" height="15.40423" transform="translate(157.27038 -489.02769) rotate(45)"/>
+    <rect class="cls-5" width="136.85106" height="68.93617"/>
+    <rect class="cls-5" width="136.85106" height="68.93617"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="body">
+
+    {% if error %}
+    <h3>{{ error }}</h3>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="signup">
+            <div class="logo">
+                <img class="logo_1" src="{%static 'base_img/color letter.svg' %}">
+            </div>
+            <div>
+                <h1>회원가입</h1>
+            </div>
+            <div class="id">
+                <input type="text" name="username" placeholder="아이디">
+                <div class="id-content">*아이디 관련 유의사항</div>
+            </div>
+            <div class="password">
+                <input type="password" name="password" placeholder="비밀번호">
+                <div class="pas-notice">*비밀번호 관련 유의사항</div>
+                <input type="password" name="password" placeholder="비밀번호 확인">
+            </div>
+            <div>
+                <button class="button" type="submit">회원가입</button>
+            </div>
+        </div>
+</div>
+</form>
+{% endblock %}

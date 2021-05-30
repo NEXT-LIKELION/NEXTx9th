@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="body">
+    <div class="likes">
+        스크랩한 학회
+    </div>
+    {% for scrap in scraps %}
+    <div class="like-aca1">
+        <div class="like-aca-logo">
+            {% if scrap.post.logo %}
+            <img src="{{scrap.post.logo.url}}" />
+            {% endif %}
+        </div>
+        <div class="like-caca-box">
+            <div class="like-aca-bold">{{scrap.post}}</div>
+            <div class="like-aca-content">
+                한 줄 설명: {{scrap.post.introduction}}
+                <br></br>
+                모집 대상: {{scrap.post.target}}
+            </div>
+            <div class="like-aca-bold">마감 기한: {{scrap.post.apply_end}}</div>
+        </div>
+        <div class="like-aca-cate">학회 분류: {{scrap.post.category}}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

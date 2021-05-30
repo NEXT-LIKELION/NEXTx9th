@@ -1,1 +1,5 @@
-.DS_Store
+secrets.json
+migrations
+db.sqlite3
+.vscode
+__pycache__

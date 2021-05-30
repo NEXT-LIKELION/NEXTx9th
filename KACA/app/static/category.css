@@ -1,0 +1,97 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+.category_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_bar_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bar_title {
+  margin-top: 61px;
+  margin-left: 132px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.academy_contents_box {
+  display: inline flex;
+}
+
+.academy_contents_box {
+  width: 1441px;
+  height: 1529px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category_selection {
+  display: flex;
+  flex-direction: row;
+}
+
+.academy_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.academy_content {
+  display: flex;
+  flex-direction: row;
+}
+
+.academy_description {
+  display: flex;
+  flex-direction: column;
+}
+
+.academy_profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.interest_name {
+  margin-top: 50px;
+  font-size: 23px;
+  font-weight: 600;
+  margin-left: 200px;
+}
+.select_bar {
+  font-size: 23px;
+  font-weight: 600;
+  margin-left: 200px;
+}
+.interest {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding-left: 25px;
+}
+.deadline {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+.academy_submit a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.academy_pic img {
+  width: 330px;
+  height: 240px;
+}

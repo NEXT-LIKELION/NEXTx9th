@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+{% endblock css %} {% block content %}
+<div class="body">
+  {% if error %}
+  <h3>{{ error }}</h3>
+  {% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    <div class="login">
+      <div class="logo">
+        <img class="logo_1" src="{%static 'base_img/color letter.svg' %}" />
+      </div>
+      <div class="id">
+        <input type="text" name="username" placeholder="아이디" />
+      </div>
+      <div class="password">
+        <input type="password" name="password" placeholder="비밀번호" />
+      </div>
+    </div>
+    <div class="login_btn">
+      <button class="button" type="submit">로그인</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

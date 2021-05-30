@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    {% block css %}
+
+    {% endblock css %}
+    <title>찾았다, 내 인생학회. KACA</title>
+</head>
+
+<body>
+    <div class="nav_bar">
+        <div>
+            <a href="{% url 'main' %}">
+                <img class = "logo_1" src = "{%static 'base_img/color letter.svg' %}">
+            </a>
+        </div>
+        <div class = "item">
+            <div class = "left">
+                <div class = "nav-item nav-category"><a href="{% url 'category' %}">Academy List</a></div>
+                <p>|</p>
+                <div class = "nav-item nav-lecture"><a href ="{% url 'lecture_main' %}">Open Lecture</a></div>
+            </div>
+            <div class = "right">
+                <div class = "nav-login"><a href ="{% url 'login' %}">로그인</a></div>
+                <p>|</p>
+                <div class = "nav-sign"><a href ="{% url 'signup' %}">회원가입</a></div>
+                <p>|</p>
+                <div class = "nav-mypage"><a href ="{% url 'mypage' user.pk %}">마이페이지</a></div>  
+            </div>
+        </div> 
+
+    </div>
+
+
+
+    </div>
+    <div class = "content">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <footer>
+        <div class= "footer_box">
+            <div class = "footer_left">
+                <div class = "footer_content line1">
+                    <p>개인정보처리방침   이용약관   문의</p>
+                </div>
+                <div class = "footer_content line2">
+                    <p>NEXT X LIKELION 9TH HACKATHON </p>
+                </div>
+                <div class = "footer_content line3">
+                    <p>Copyright KACA All rights reserved.</p>
+                </div>
+            </div>
+            <div class = "footer_img">
+                <img class = "logo_2" src = "{%static 'base_img/color letter.svg'%}"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

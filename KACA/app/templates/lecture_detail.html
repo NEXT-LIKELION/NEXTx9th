@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'lecture_detail.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="whole_wrapper">
+    <div class="title_wrapper">
+        <div class="title_image_box">
+            {% if lecture.thumbnail %}
+            <img src='{{lecture.thumbnail.url}}'>
+            {% endif %}
+        </div>
+
+        <div class="title_intro_box">
+            <div class="title_title">
+                {{lecture.title}}
+            </div>
+            <br>
+            <div class="title_intro">
+                {{lecture.introduction}}
+            </div>
+            <br>
+            <div class="title_detail">
+
+                <div class="title_total">
+                    {{lecture.construct}}
+                </div>
+                <div class="title_price">
+                    {{lecture.price}}
+                </div>
+            </div>
+            <br>
+            <button class = "enter"> 강의 신청하기 </button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="content_wrapper">
+        <div class="content_title">강좌 소개</div>
+        <div class="contexts">
+        <div class="content_content_box">
+            <div class="content_image">
+                {% if lecture.thumbnail %}
+                <img src ='{{lecture.thumbnail.url}}'>
+            {% endif %}  
+            </div>
+            <div class="content_content">
+                {{lecture.content}}
+            </div>
+        </div>
+        </div>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
+        <div class="content_button">
+            <a href="{% url 'edit' lecture.pk %}"> 수정하기 </a>
+            <a href="{% url 'delete' lecture.pk %}"> 삭제하기 </a>
+        </div>
+        {% endif %}
+    </div>
+    <br>
+
+    <div class="review_wrapper">
+
+        <div class="comment_wrapper">
+
+            <div class="comment_box">
+                {% if user.is_authenticated %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type='text' name='content' placeholder="댓글을 달아주세요">
+                    <button type='submit'>댓글쓰기</button>
+                </form>
+                {% endif %}
+            </div>
+
+            {% for lecture_comment in lecture.lecture_comments.all %}
+            <div class="lecture_comment">
+                <div class="lecture_comment_username">{{user.username}}</div>
+                <div class="lecture_comment_content">{{lecture_comment.content}}</div>
+                {% if user.is_authenticated and lecture_comment.author.pk == user.pk %}
+                <div class="lecture_comment_delete">
+                    <a href="{% url 'delete_lecture_comment' lecture.pk lecture_comment.pk %}">삭제</a>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
