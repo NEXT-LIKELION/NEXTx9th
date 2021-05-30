@@ -1,0 +1,10 @@
+{% extends 'main_base.html' %}
+
+{% block input %}
+    <div class="title-box">
+        <a href="{% url 'login' %}">로그인</a>
+    </div>
+    <div class="title-box">
+        <a href="{% url 'signup' %}">회원가입</a>
+    </div>
+{% endblock input %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>녹화한 과목</h1>
+
+
+<div>    
+    <ul>
+        {% for i in recordings %} 
+        <li>
+            <span> {{ i.subject.subject }} </span>
+            <span>({{ i.date.month }}월  {{ i.date.day }}일)</span>
+            <a href="{% url 'checkcomplete' i.id %}"><span class="button">수정</span></a>
+        </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for i in tf %} 
+        <li>
+            {{ i }}
+        </li>
+        {% endfor %}
+    </ul>
+   
+</div>
+
+</body>
+</html>

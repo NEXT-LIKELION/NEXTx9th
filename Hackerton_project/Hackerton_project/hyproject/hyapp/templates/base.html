@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} {% block css %}
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% endblock %}
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-bar-title">🛫 INVISIBLE STUDENT</div>
+        <div class="nav-bar-nowtime"></div>
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+</body>
+
+<script src="{% static 'base.js' %}" type="text/javascript">
+</script>
+</html>

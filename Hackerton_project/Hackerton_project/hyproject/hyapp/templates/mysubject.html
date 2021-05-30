@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+  <div class="class_list">
+    <span> 📚 강좌 L I S T 입니다.
+      <br>
+      요일과 시간, 녹화여부를 선택해주세요😊
+    </span>
+  </div>
+  <form method="POST">
+    <div class="class_list-box">
+      <table>
+        <th>과목명</th>
+        <th>교수명</th>
+        <th>요일</th>
+        <th>시작시각</th>
+        <th>종료시각</th>
+        <th>줌/콜라보레이트 선택</th>
+        {% for subject in subjects %}
+        <tr>
+          <td>{{ subject.subject }}</td>
+          <td>{{ subject.professor }}</td>
+          <td>
+            {% csrf_token %}
+            <select name="day1[]">
+              <option value="">day1</option>
+              <option value="월요일">월요일</option>
+              <option value="화요일">화요일</option>
+              <option value="수요일">수요일</option>
+              <option value="목요일">목요일</option>
+              <option value="금요일">금요일</option>
+            </select>
+            <select name="day2[]">
+              <option value="">day2</option>
+              <option value="월요일">월요일</option>
+              <option value="화요일">화요일</option>
+              <option value="수요일">수요일</option>
+              <option value="목요일">목요일</option>
+              <option value="금요일">금요일</option>
+              <option value="">없음</option>
+            </select>
+          </td>
+          <td>
+            <input type="time" id="start_time" name="start_time[]">
+          </td>
+          <td>
+            <input type="time" id="finish_time" name="finish_time[]">
+          </td>
+          <td>
+            <select name="recording_choices[]">
+              <option value="zoom">줌</option>
+              <option value="collaborate">콜라보레이트</option>
+            </select>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="submit">
+      <button type="submit"> ✔ 저장하기</button>
+    </div>
+  </form>
+</div>
+  {% endblock content %}  
+</form>

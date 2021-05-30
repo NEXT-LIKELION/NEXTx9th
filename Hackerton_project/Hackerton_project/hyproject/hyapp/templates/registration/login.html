@@ -1,0 +1,23 @@
+{% extends 'main_base.html' %}
+{% block input %}
+  {% if error %}
+  <div class="error">
+    <span>{{ error }}</span>
+  </div>
+  {% endif %}
+  <form method="POST">
+   {% csrf_token %}
+    <div class="title-box">
+      <input type="text" id="username" name="username" placeholder="아이디">
+    </div>
+    <div class="title-box">
+      <input type="password" id="password" name="password" placeholder="비밀번호">
+    </div>
+    <div class="title-line"></div>
+    <div class="title-button"> 
+      <button type="submit">로그인</button>
+    </div>
+</form>
+{% endblock input %}
+</body>
+</html>

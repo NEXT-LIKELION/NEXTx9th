@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+selenium = "*"
+bs4 = "*"
+requests = "*"
+pyautogui = "*"
+numpy = "*"
+moviepy = "*"
+wave = "*"
+pillow = "*"
+opencv-python = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

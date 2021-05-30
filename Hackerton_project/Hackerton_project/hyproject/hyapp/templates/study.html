@@ -1,0 +1,40 @@
+<h1>공부해요</h1>
+
+
+<div>
+    <ul>
+        {% for i in subjects %} 
+        
+        <li>
+            {{ i.subject }} 
+        </li>
+        {% endfor %}
+    </ul>
+    <h2>녹화한 개수</h2>
+    <ul>
+        {% for i in sub %} 
+        <li>
+            {{ i }} 개 
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- <h2>미수강 개수</h2>
+    <ul>
+        {% for i in in_num %} 
+        <li>
+            {{ i }} 개 
+        </li>
+        {% endfor %} -->
+    </ul>
+<hr>
+    전체 강의 개수 : {{ lectures_num }}
+    <br>
+    녹화 강의 개수 : {{ recordings_num }}
+    <br>
+    <!-- 수강 완료 강의 개수 : {{ comp_num }}
+    <br> -->
+    녹화 비율 : {{ recording_rate }} %
+    <!-- <br>
+    수강 완료 비율 : {{  complete_rate }} % -->
+
+</div>

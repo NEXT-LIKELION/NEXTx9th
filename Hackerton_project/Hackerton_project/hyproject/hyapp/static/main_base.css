@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap');
+
+body{
+    background:
+           /* top, transparent black, faked with gradient */ 
+           linear-gradient(
+             rgba(0, 0, 0, 0.7), 
+             rgba(0, 0, 0, 0.7)
+           ),
+           /* bottom, image */
+           url(./back-travel.jpg) no-repeat center center fixed;
+           background-size: cover;
+        }
+
+.nav-bar a{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    font-family: 'Noto Serif KR', serif;
+}
+
+.title p{
+    font-size: 80px;
+    margin: 380px 0px 30px 0px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.title > .title-box{
+    width: 423px;
+    height: 85px;
+    background: rgba(0, 0, 0, 0.17);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin: 8px 0px;
+    line-height: 85px;
+    text-align: center;
+}
+
+.title-box > a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title > .title-text{
+    margin : 40px 0px;
+    background : rgba (255, 255, 255, 0.87);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+input {
+    outline: none;
+    width: 423px;
+    height: 85px;
+    background: rgba(0, 0, 0, 0.17);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin: 8px 0px;
+    line-height: 85px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Serif KR', serif;
+    color: white;
+}
+
+.title-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    outline: none;
+    width: 423px;
+    height: 85px;
+    background: rgba(0, 133, 255, 0.69);
+    border: none;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin: 8px 0px;
+    line-height: 85px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Serif KR', serif;
+    color: white;
+}
+
+.title-line {
+    margin:20px 0px;
+    width: 423px;
+    height: 0px;
+    left: 130px;
+    top: 276px;
+    border: 1px solid rgb(128, 128, 128);
+}
+
+.error{
+    height: 100px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    line-height: 100px;
+}
+
+.error > span{
+    color: rgb(177, 32, 32);
+    letter-spacing: -2px;
+}

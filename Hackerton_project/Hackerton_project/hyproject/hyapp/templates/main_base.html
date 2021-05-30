@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} {% block css %}
+    <link rel="stylesheet" href="{% static 'main_base.css' %}">
+    {% endblock %}
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <a> 🛫 INVISIBLE STUDENT</a>
+    </div>
+    <div class="title">
+        <p>INVISIBLE STUDENT</p>
+        {% block input %}
+
+        {% endblock input %}
+        <div class="title-text">
+            지치고 힘든 생활에, 휴식을 가져보세요.
+        </div>
+    </div>
+</body>
+</html>

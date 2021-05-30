@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    <div class="class_list">
+        <div class="class_list-today"></div>
+        <div class="class_list-info">
+            어떤 수업을 녹화하실건가요? 😊
+        </div>
+    </div>
+    <form method="POST">
+        <div class="class_list-box">
+            {% csrf_token %}
+            <table>
+                <th>과목명</th>
+                <th>교수명</th>
+                <th>요일</th>
+                <th>시작시각</th>
+                <th>종료시각</th>
+                <th>녹화여부</th>
+                {% for i in subjects %}
+                <tr>
+                    <td>{{ i.subject }}</td>
+                    <td>{{ i.professor }}</td>
+                    <td>{{ i.day1 }} {{ i.day2 }}</td>
+                    <td>{{ i.start_time }}</td>
+                    <td>{{ i.finish_time }}</td>
+                    <td>
+                        <select name="record[]">
+                            <option value="True">O</option>
+                            <option value="False">X</option>
+                        </select>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="submit">
+            <button input type="submit" value="submit"> ✔ 저장하기</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+

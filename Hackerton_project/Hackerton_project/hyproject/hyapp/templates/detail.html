@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>이곳은 과목별 세부 정보를 입력하는 창이다.</h1>
+  <h2>{{ subject.title }}</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <select name="day1" value="{{ subject.day1 }}" required>
+      <option value="">day1</option>
+      <option value="월요일">월요일</option>
+      <option value="화요일">화요일</option>
+      <option value="수요일">수요일</option>
+      <option value="목요일">목요일</option>
+      <option value="금요일">금요일</option>
+    </select>
+    <select name="day2" value="{{ subject.day2 }}">
+      <option value="">day2</option>
+      <option value="월요일">월요일</option>
+      <option value="화요일">화요일</option>
+      <option value="수요일">수요일</option>
+      <option value="목요일">목요일</option>
+      <option value="금요일">금요일</option>
+      <option value="">없음</option>
+    </select>
+    시작하는 시간:<input type="time" id="start_time" name="start_time" value="{{ subject.start_time }}" required>
+    끝나는 시간<input type="time" id="finish_time" name="finish_time" value="{{ subject.finish_time }}" required>
+    <button type="submit">저장하기</button>
+  </form>
+  <a href="{% url 'mysubject' user.pk %}">과목목록</a>
+  
+</body>
+</html>

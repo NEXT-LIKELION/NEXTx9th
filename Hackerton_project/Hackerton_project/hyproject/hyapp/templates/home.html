@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    <div class="class_list">
+        <div class="class_list-today"></div>
+        <div class="class_list-info">
+            오늘의 강좌 입니다 ! 😊
+        </div>
+    </div>
+    <div class="class_list-box">
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+                <th>과목명</th>
+                <th>교수명</th>
+                <th>요일</th>
+                <th>시작시각</th>
+                <th>종료시각</th>
+                <th>녹화여부</th>
+                {% for i in subjects %}
+                <tr>
+                    <td>{{ i.subject }}</td>
+                    <td>{{ i.professor }}</td>
+                    <td>{{ i.day1 }} {{ i.day2 }}</td>
+                    <td>{{ i.start_time }}</td>
+                    <td>{{ i.finish_time }}</td>
+                    {% endfor %}
+                    {% for i in tf %}
+                    <td> {{ i }} </td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </form>
+        <a href="{% url 'click_start' %}">녹화 시작하기</a>
+    </div>
+    <div class="weather-info">
+        ☀ 이 날, 놀러갈까? 
+    </div>
+        <div class="weather-content">
+            {% for i in weathers %}
+            <div class="weather-box">
+                <a>🌞</a>
+                <p>📆 {{ i.0 }}</p>
+                <p>기온 {{ i.1 }}</p>
+                <p>강수확률 {{ i.2 }}</p>
+            </div>
+            {% endfor %}    
+        </div>
+
+    <div class="travel-info">
+        🌍 여행지는 이곳이 어때요?
+    </div>
+    <div class="travel-info-select">
+        <p>이번주에는 {{ travel_select }}로 놀러가자!</p>
+    </div>
+
+</div>
+{% endblock content %}  
+</div>
