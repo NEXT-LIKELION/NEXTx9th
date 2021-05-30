@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+{% endblock %}
+{% block image_box %}
+  {% if error %}
+    <h3 style="color: red;">{{ error }}</h3>
+  {% endif %}
+  <form class="signup_container" method="POST">
+    {% csrf_token %}
+    <input class="input_box" type="text" name="username" placeholder="이름">
+    <input class="input_box" type="text" name="password" placeholder="비밀번호">
+    <button class="signup_button" type="submit">SIGN UP</button>
+  </form>
+{% endblock %}

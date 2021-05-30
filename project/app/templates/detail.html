@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block image_box %}
+<div class="detailPage">
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+    
+    <div id="capture">
+        <div class="img-box">
+            <img class="img" src="http://d3kjgqpj8a9chj.cloudfront.net/{{final_select_num}}.jpeg">
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <div class="lastLine">
+        <!-- 폰트사이즈 -->
+        <div class="btn_group" id="fontsize">
+            <input id="test_btn1" class="button" type="button" value="-" onclick="resize(-0.3);" />
+            <input class="button" type="button" value="size" onclick="resize(10);" />
+            <input id="test_btn2" class="button" type="button" value="+" onclick="resize(0.3);" />
+        </div>
+        <!-- 폰트스타일 -->
+        <div class="btn btn_group">
+            <button id="test_btn1" class="beforeBtn button">-</button>
+            <button class="fontStyleNo button">style1</button>
+            <button id="test_btn2" class="afterBtn button">+</button>
+        </div>
+        <div class="btn_group">
+            <button class="save_btn" id="shot" onclick=capture()>저장하기</button>
+        </div>
+    </div>
+    <div class="text_input">
+        <textarea id='input' cols=40 rows=4 placeholder=" 짤 문구를 입력해주세요" onkeyup='printName()'></textarea>
+    </div>
+</div>
+<!-- 결과화면을 그려줄 canvas -->
+<!-- <canvas id="canvas" width="900" height="600" style="border:1px solid #d3d3d3;"></canvas> -->
+
+
+<!-- <select><option value="html">html</option></select> -->
+<script src="{% static 'textmove.js' %}"></script>
+<script src="{% static 'html2canvas.js' %}"></script>
+<script>
+    //글자 입력하는대로 출력하게 
+
+    function sampleTouc() {
+        const imageBox = document.querySelector(".img-box");
+        imageBox.addEventListener("click", function (event) {
+            result.onmousedown = function (event) {
+
+                let shiftX = event.clientX - result.getBoundingClientRect().left;
+                let shiftY = event.clientY - result.getBoundingClientRect().top;
+
+                result.style.position = 'absolute';
+                result.style.zIndex = 1000;
+                document.body.append(result);
+
+                moveAt(event.pageX, event.pageY);
+
+                function moveAt(pageX, pageY) {
+                    result.style.left = pageX - shiftX + 'px';
+                    result.style.top = pageY - shiftY + 'px';
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                    console.log(event.clientX)
+                    console.log(event.clientY)
+
+                    result.hidden = true;
+                    let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+                    result.hidden = false;
+
+                    if (!elemBelow) return;
+
+                    let droppableBelow = elemBelow.closest('.droppable');
+                    if (currentDroppable != droppableBelow) {
+                        if (currentDroppable) { // null when we were not over a droppable before this event
+                            leaveDroppable(currentDroppable);
+                        }
+                        currentDroppable = droppableBelow;
+                        if (currentDroppable) { // null if we're not coming over a droppable now
+                            // (maybe just left the droppable)
+                            enterDroppable(currentDroppable);
+                        }
+                    }
+                }
+
+                document.addEventListener('click', onMouseMove);
+
+                result.onmouseup = function () {
+                    document.removeEventListener('click', onMouseMove);
+                    result.onmouseup = null;
+                };
+
+            };
+        })
+    }
+
+
+
+    function printName() {
+        const name = document.getElementById('input').value;
+        document.getElementById("result").innerText = name;
+    }
+    //본문 폰트사이즈 조절, 기본사이즈=1em
+    let font = 1.5;
+    let line = 16;
+
+    function resize(f) {
+        if (f == 10) font = 1.5;
+        else font += f;
+        document.getElementById("result").style.fontSize = font + 'em';
+    }
+    //본문 글자 폰트스타일 조절
+    let fontStyle = document.getElementById("result")
+    let fontStyleNo = document.querySelector(".fontStyleNo");
+    let i = 1;
+    document.querySelector(".afterBtn").addEventListener('click', function (idx) {
+        if (idx) {
+            if (i == 8) return;
+            i++;
+        }
+        fontStyle.setAttribute("class", "fontStyle" + i);
+        fontStyleNo.innerHTML = 'style' + i;
+    });
+
+    document.querySelector(".beforeBtn").addEventListener('click', function (idx) {
+        if (idx) {
+            if (i == 1) return;
+            i--;
+        }
+        fontStyle.setAttribute("class", "fontStyle" + i);
+        fontStyleNo.innerHTML = 'style' + i;
+    })
+
+    function capture() {
+        console.log("capture?");
+        const image = document.querySelector(".img-box");
+
+        window.scrollTo(0, 0);
+        html2canvas(document.body.querySelector(".img-box"), {
+                logging: true,
+                letterRendering: 1,
+                useCORS: true
+            })
+            .then(canvas => {
+                saveAs(canvas.toDataURL(), 'file-name.png');
+            });
+    };
+
+    function saveAs(uri, filename) {
+
+        var link = document.createElement('a');
+        if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            window.open(uri);
+        }
+    }
+
+    // function drawImg(imgData) {
+    //     return new Promise(function reslove() {
+    //             var canvas = document.querySelector('.img-box');
+    //             var ctx = canvas.getContext('2d');
+    //             ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //             var imageObj = new Image();
+    //             imageObj.onload = function () {
+    //                 ctx.drawImage(imageObj, 10, 10);
+    //             };
+    //             imageObj.src = imgData;
+    //         },
+    //         function reject() {});
+    // }
+
+    const goHome = () => {
+      // let sum = select_num1 + select_num2 + select_num3
+      
+      console.log('HI')
+      location.href = `http://127.0.0.1:8000/home/`
+      // history.push('www.naver.com')
+    }
+</script>
+{% endblock image_box %}
+
+
+{% block button_box%}
+<div class="submit_button">
+<button id="finalResult" onclick={goHome()}>홈으로</button>
+</div>
+{% endblock button_box %}

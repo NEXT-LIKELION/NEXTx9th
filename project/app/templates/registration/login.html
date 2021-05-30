@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
+
+{% block image_box %}
+  {% if error %}
+    <h3 style="color: #FCD8C0;">{{ error }}</h3>
+  {% endif %}
+
+  <nav id="topMenu">
+    <div>
+      {% if user.is_authenticated %}
+        <div class="logout_button">
+          <a href="{% url 'logout' %}">LOG OUT</a>
+        </div>
+      {% else %}
+        <form class="login_container" method="POST">
+          {% csrf_token %}
+          <div class="welcome_message">
+            <p class="message">Welcome to Zzalpangi~!</p>
+          </div>
+          <input class="input_box" type="text" name="username" placeholder="이름">
+          <br>
+          <input class="input_box" type="text" name="password" placeholder="비밀번호">
+          <br>
+          <div class="login_signup">
+            <button class="login_button" type="submit">LOGIN</button>
+            <div class="login_button">
+              <a style="font-size:15px" href="{% url 'signup' %}">SIGN UP</a>
+            </div>
+          </div>
+        </form>
+        <div class="button_wrapper">
+          <div>
+            <a class="menuLink" href="{% provider_login_url 'kakao' %}">
+
+
+              <img class="kakao_button" src="https://developers.kakao.com/tool/resource/static/img/button/login/full/ko/kakao_login_medium_narrow.png"></a>
+          </div>
+        </div>
+
+      {% endif %}
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block button_box%}
+<div class="submit_button">
+<div id="finalResult" onclick={goDetail()}>환영합니당!</div>
+</div>
+{% endblock button_box %}

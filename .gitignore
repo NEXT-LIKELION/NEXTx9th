@@ -1,1 +1,5 @@
-.DS_Store
+.vscode
+migrations
+/project/db.sqlite3
+__pycache__
+# config/

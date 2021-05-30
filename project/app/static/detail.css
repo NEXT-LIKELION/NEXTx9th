@@ -1,0 +1,181 @@
+* {
+    text-align: center;
+}
+
+.fontStyle1 {
+    font-family: 'Nanum Gothic', sans-serif;
+    -webkit-text-stroke: 1.2px #000;
+}
+
+.fontStyle2 {
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: black;
+}
+
+.fontStyle3 {
+    font-family: '궁서';
+    font-weight: bold;
+    -webkit-text-stroke: 1px #000;
+}
+
+.fontStyle4 {
+    font-family: '궁서';
+    background-color: black;
+}
+
+.fontStyle5 {
+    font-family: 'Song Myung', serif;
+    -webkit-text-stroke: 1px #000;
+}
+
+.fontStyle6 {
+    font-family: 'Song Myung', serif;
+    background-color: black;
+}
+
+.fontStyle7 {
+    font-family: Stylish;
+    -webkit-text-stroke: 1px #000;
+}
+
+.fontStyle8 {
+    font-family: Stylish;
+    background-color: black;
+}
+
+.detailPage {
+    width: 100%;
+    height: 100%;
+    padding-left: 1px;
+}
+
+#capture {
+    height: 70%;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+.img-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.img-box img {
+    object-fit: contain;
+    width: 100%;
+    height: 306px;
+}
+
+#result {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 95%;
+    left: 50%;
+    font-size: 1.5em;
+    transform: translate(-50%, -50%);
+}
+
+.result {
+    font-family: 'Nanum Gothic', sans-serif;
+    -webkit-text-stroke: 1.2px #000;
+}
+
+.lastLine {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: #fac6af;
+    border: rgba(196, 196, 196, 0.5) 2px solid;
+    margin-bottom: 5px;
+}
+
+.lastLine .btn_group {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 60%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text_input {
+    height: 17%;
+    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+textarea {
+    padding: 3px;
+    text-align: left;
+    border: 1px solid  hsl(2, 75%, 78%);
+    border-radius: 0px 0px 10px 10px;
+}
+
+#test_btn1 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-right: -6px;
+    width: 20%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    border: rgba(196, 196, 196, 0.5) 2px solid;
+}
+
+#test_btn2 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -6px;
+    width: 20%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    border: rgba(196, 196, 196, 0.5) 2px solid;
+}
+
+.btn_group .button {
+    width: 60%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    border: rgba(196, 196, 196, 0.5) 2px solid;
+}
+
+.btn_group .save_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    border: rgba(196, 196, 196, 0.5) 2px solid;
+}
+
+
+.submit_button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.submit_button button {
+    /* width: 90%;
+    height: 100%;
+    
+    width: 90px; */
+    position: relative;
+    width: 90%;
+    height: 100%;
+    border-radius: 50%;
+    background: #FCD8C0;
+}

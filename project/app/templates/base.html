@@ -1,0 +1,38 @@
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    {% block css %}{% endblock %}
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="body-container">
+
+      <div class="header">
+        <h1>
+          <span>Z</span><span>Z</span><span>A</span><span>L</span><span>P</span><span>A</span><span>N</span><span>G</span><span>I</span></h1>
+      </div>
+      <div class="image_box">
+        {% block image_box %}{% endblock image_box %}
+      </div>
+      <div class="box_wrapper">
+        <div class="adv_box">
+          <img src="http://popsop.com/wp-content/uploads/Coca-Cola-polar-bears-are-back-on-TV_01.jpg" />
+        </div>
+        <div class="button_box">
+          {% block button_box%}{% endblock button_box %}
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

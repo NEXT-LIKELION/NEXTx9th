@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+{% endblock %}
+
+{% block image_box %}
+<div id="capture" style="padding: 10px; background: #f5da55">
+    <h4 style="color: #000; ">Hello world!</h4>
+</div>
+
+<script src="/project/static/result.js"></script>
+<script>
+    
+    function saveAs(uri, filename){
+
+        var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+              link.href = uri;
+              link.download = filename; 
+              document.body.appendChild(link);
+              link.click(); 
+              document.body.removeChild(link);
+            } else {
+              window.open(uri);
+            }
+        }
+
+    saveAs(url, filename)
+</script>
+{% endblock %}
+
+

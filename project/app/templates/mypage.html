@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
+{% endblock css %}
+
+{% block image_box %}
+<nav id="topMenu" >
+    <ul>
+        <li><a class="menuLink" href="{% url 'home' %}">Home</a></li> 
+        {% if user.is_authenticated %}
+        <li><a class="menuLink" href="{% url 'logout' %}">Log out</a></li>  
+        {% else %}
+        <li><a class="menuLink" href="{% provider_login_url 'kakao' %}"><img src="http://localhost:1.8000//tool/resource/static/img/button/login/full/ko/kakao_login_medium_narrow.png">
+            </a></li> 
+        <li><a class="menuLink" href="{% url 'login' %}">Log in</a></li>
+        <li><a class="menuLink" href="{% url 'signup' %}">Sign up</a></li> 
+        {% endif %}
+    </ul>
+</nav>
+<input type="button" onClick="sendLinkCustom();" value="Custom"/>
+<input type="button" onClick="sendLinkDefault();" value="Default"/>
+
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/JavaScript" src="http://localhost:1.8000//sdk/js/kakao.min.js"></script>
+<script type="text/javascript">
+    function sendLinkCustom() {
+        Kakao.init("b9026b359206e70ec2b918704c35e86d");
+        Kakao.Link.sendCustom({
+            templateId: '54478'
+        });
+    }
+</script>
+
+<script>
+try {
+  function sendLinkDefault() {
+      
+    Kakao.init('b9026b359206e70ec2b918704c35e86d')
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '루피는 스무짤',
+        description: '선물이 도착했습니다. 선물함에서 확인하세요',
+        imageUrl:
+          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+        link: {
+          mobileWebUrl: 'https://localhost.8000',
+          webUrl: 'https://localhost.8000',
+        },
+      },
+      social: {
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845,
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'https://localhost.8000',
+            webUrl: 'https://localhost.8000',
+          },
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: 'https://localhost.8000',
+            webUrl: 'https://localhost.8000',
+          },
+        },
+      ],
+    })
+  }
+; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
+</script>
+{% endblock %}

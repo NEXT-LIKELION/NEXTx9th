@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
+{% endblock css %}
+{% block image_box %}
+  <div class="zzal">
+    <div class="line1">
+      <button id="1" value="one" onclick="line1(this.id)">주식</button>
+      <button id="2" value="two" onclick="line1(this.id)">학점</button>
+      <button id="3" value="three" onclick="line1(this.id)">코딩</button>
+    </div>
+    <div class="line1_buttons">
+      <div class="line1_button1"></div>
+      <div class="line1_button2"></div>
+      <div class="line1_button3"></div>
+    </div>
+    <div class="line2">
+      <button id="4" onclick="line2(this.id)">
+        <img id="loopy" src="{%static 'images/4.jpeg' %}">
+      </button>
+      <button id="5" onclick="line2(this.id)">
+        <img id="snoopy" src="{%static 'images/6.jpeg' %}">
+      </button>
+      <button id="6" onclick="line2(this.id)">
+        <img id="zakka" src="{%static 'images/5.jpeg' %}">
+      </button>
+    </div>
+    <div class="line2_buttons">
+      <div class="line2_button1"></div>
+      <div class="line2_button2"></div>
+      <div class="line2_button3"></div>
+    </div>
+    <div class="line3">
+      <button class="btn7" id="7" onclick="line3(this.id)"></button>
+      <button class="btn8" id="8" onclick="line3(this.id)"></button>
+      <button class="btn9" id="9" onclick="line3(this.id)"></button>
+    </div>
+    <div class="line3_buttons">
+      <div class="line3_button1"></div>
+      <div class="line3_button2"></div>
+      <div class="line3_button3"></div>
+    </div>
+  </div>
+
+  <script>
+    let final_select_num = '';
+    let semi_select_num = '';
+    let select_num1 = '';
+    let select_num2 = '';
+    let select_num3 = '';
+    let img7
+    let img8
+    let img9
+    let btn_1;
+    let btn_2;
+    let btn_3;
+    let btn_num_1;
+    let btn_num_2;
+    let btn_num_3;
+    const btn7 = document.querySelector(".btn7");
+    const btn8 = document.querySelector(".btn8");
+    const btn9 = document.querySelector(".btn9");
+
+    const line1 = (button_id) => {
+      select_num1 = button_id;
+      btn_num_1 = select_num1 *= 1;
+      if (btn_1) {
+        btn_1.style.backgroundColor = "white"
+        if (btn_2) {
+          btn_2.style.backgroundColor = "white"
+          if (img7) {
+            if (btn_3) {
+              btn_3.style.backgroundColor = "white"
+            }
+            img7.remove()
+            img8.remove()
+            img9.remove()
+          }
+        }
+      }
+      btn_1 = document.querySelector(`.line1_button${btn_num_1}`)
+      btn_1.style.backgroundColor = "#8fc8db";
+    }
+    const line2 = (button_id) => {
+      select_num2 = button_id;
+      semi_select_num = select_num1 + select_num2;
+      btn_num_2 = select_num2 *= 1;
+      btn_num_2 -= 3;
+
+      if (btn_2) {
+        btn_2.style.backgroundColor = "white"
+        if (btn_3) {
+          btn_3.style.backgroundColor = "white"
+        }
+      }
+      btn_2 = document.querySelector(`.line2_button${btn_num_2}`)
+      console.log(btn_2)
+      btn_2.style.backgroundColor = "#8fc8db";
+
+      if (img7) {
+        img7.remove()
+        img8.remove()
+        img9.remove()
+      }
+      img7 = document.createElement('img');
+      btn7.appendChild(img7);
+      img8 = document.createElement('img');
+      btn8.appendChild(img8);
+      img9 = document.createElement('img');
+      btn9.appendChild(img9);
+
+      img7.setAttribute("src", `../static/images/${semi_select_num}7.jpeg`)
+      img8.setAttribute("src", `../static/images/${semi_select_num}8.jpeg`)
+      img9.setAttribute("src", `../static/images/${semi_select_num}9.jpeg`)
+    }
+    const line3 = (button_id) => {
+      select_num3 = button_id;
+      btn_num_3 = select_num3 *= 1;
+      console.log(btn_num_3)
+      btn_num_3 -= 6;
+      console.log(btn_num_3)
+      if (btn_3) {
+        btn_3.style.backgroundColor = "white"
+      }
+      btn_3 = document.querySelector(`.line3_button${btn_num_3}`)
+      console.log(btn_3)
+      btn_3.style.backgroundColor = "#8fc8db";
+
+    }
+
+    const goDetail = () => {
+      // let sum = select_num1 + select_num2 + select_num3
+      final_select_num = String(select_num1) + String(select_num2) + String(select_num3)
+
+      location.href = `detail/${final_select_num}`
+      // history.push('www.naver.com')
+    }
+  </script>
+{% endblock image_box %}
+
+{% block button_box%}
+  <div class="submit_button">
+    <button id="finalResult" onclick={goDetail()}>다음</button>
+  </div>
+{% endblock button_box %}
