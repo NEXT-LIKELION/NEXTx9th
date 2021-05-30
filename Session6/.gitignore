@@ -1,5 +1,0 @@
-.vscode
-.DS_Store
-migrations
-__pycache__
-db.sqlite3
